@@ -1,0 +1,36 @@
+{
+  "name": "Pombo Correio",
+  "description": "Send secret messages through this inline telegram bot",
+  "repository": "https://github.com/leviobrabo/pombomsgbot",
+  "env": {
+    "API_TOKEN": {
+      "description": "Telegram API bot token",
+      "value": ""
+    },
+    "LOG_PATH": {
+      "description": "Path to the log-file",
+      "value": "Logs/session.log",
+      "required": false
+    },
+    "DATABASE_URL": {
+      "description": "URL for the PostgreSQL database",
+      "value": "",
+      "required": true
+    },
+    "ADMINS": {
+      "description": " ID of bot admin users (32400363 or 32400360, 52130333, 5122330)",
+      "value": "",
+      "required": true
+    },
+    "channelStatusId": {
+      "description": "Channel ID",
+      "value": "",
+      "required": true
+    }
+  },
+  "GROUP_ID": {
+    "description": "GROUP_ID LOG",
+    "value": "",
+    "required": true
+  }
+}
