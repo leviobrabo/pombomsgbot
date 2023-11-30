@@ -12,6 +12,7 @@ import re
 import time
 from datetime import datetime
 from threading import Thread
+from dotenv import load_dotenv
 
 import psutil
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
@@ -29,6 +30,7 @@ admins = os.environ['ADMINS'].split(',')
 
 logger.add(os.environ['LOG_PATH'])
 rsc = Resources(locales)
+load_dotenv()
 
 inline_query_regex = re.compile(r'^.+([ \n](@\w+|id[0-9]+))+$')
 scope_regex = re.compile(r'([ \n](@\w+|id[0-9]+))+$')
