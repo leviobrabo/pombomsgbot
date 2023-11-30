@@ -7,6 +7,7 @@
 
 import os
 from datetime import datetime
+from dotenv import load_dotenv
 
 from loguru import logger
 from peewee import (
@@ -27,6 +28,7 @@ from pombo.utils.post_utils import (
     get_formatted_username_or_id,
     get_formatted_username_or_id_chat,
 )
+load_dotenv()
 
 DATABASE_TYPE = 'POSTGRESQL'
 
