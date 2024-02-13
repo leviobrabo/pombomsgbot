@@ -1003,7 +1003,7 @@ if __name__ == '__main__':
         # asyncio.run(set_my_configs())
         asyncio.run(
             bot.infinity_polling(
-                allowed_updates=util.update_types, skip_pending=True
+                allowed_updates=util.update_types, skip_pending=True, non_stop=True
             )
         )
     except KeyboardInterrupt:
