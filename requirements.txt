@@ -1,5 +1,4 @@
 peewee==3.17.1
-aiogram==3.4.0
 loguru==0.7.2
 psycopg2==2.9.9
 APScheduler==3.10.4
