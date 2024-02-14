@@ -868,88 +868,88 @@ async def cmd_broadcast(message: types.Message):
                 )
 
 
-@bot.message_handler(content_types=util.content_type_media)
-async def all_messages(message: types.Message):
-    try:
-        if message.chat.id in ignored_chat_ids:
-            return
-        Thread(target=ignore, args=(message.chat.id, 1)).start()
-        command = None
-        if message.content_type == 'text':
-            if message.text.startswith('/'):
-                command = message.text
-                if message.text.find(' ') > 0:
-                    command = message.text[: message.text.find(' ')]
-        if command is not None and command.lower().endswith(
-            (await bot.get_me()).username.lower()
-        ):
-            command = command.split('@')[0]
-        if message.chat.type == 'private':
-            target = User.get_or_create(message.from_user)
-            if target.has_dialog:
-                target.save()
-            else:
-                await send_new_user_message(message.from_user)
-        else:
-            target = Group.get_or_create(message.chat)
-            if target.has_dialog:
-                target.save()
-            else:
-                await send_new_group_message(message.chat)
-        if message.chat.type == 'private' and str(message.chat.id) in admins:
-            if message.reply_to_message:
-                if message.reply_to_message.text in [
-                    broadcast_text.format('users'),
-                    broadcast_text.format('grupos'),
-                ]:
-                    type_permited = [
-                        'text',
-                        'photo',
-                        'audio',
-                        'video',
-                        'sticker',
-                        'voice',
-                        'video_note',
-                        'animation',
-                    ]
-                    if message.content_type in type_permited:
-                        target_type = ''
-                        result_broadcast = {}
-                        if (
-                            message.reply_to_message.text
-                            == broadcast_text.format('users')
-                        ):
-                            target_type = 'users'
-                            result_broadcast = await send_message_broadcast(
-                                message, 'users'
-                            )
-                        elif (
-                            message.reply_to_message.text
-                            == broadcast_text.format('grupos')
-                        ):
-                            target_type = 'grupos'
-                            result_broadcast = await send_message_broadcast(
-                                message, 'grupos'
-                            )
-                        else:
-                            return
-                        msg_result = (
-                            f'\n──❑ 「 <b>Broadcast Completed</b> 」 ❑──\n\n ☆ Total {target_type}: {result_broadcast["actives"]+result_broadcast["inactives"]}\n'
-                            f' ☆ Actives: {result_broadcast["actives"]}\n ☆ Inactives: {result_broadcast["inactives"]}\n'
-                            f' ☆ Sucess: {result_broadcast["sucess"]}\n ☆ Fail: {result_broadcast["fail"]}'
-                        )
-                        await bot.send_message(
-                            message.chat.id, msg_result, parse_mode='HTML'
-                        )
-                    else:
-                        await bot.reply_to(message, 'Tipo não permitido')
-                    return
-    except Exception as e:
-        logger.error(e)
-        logger.warning(
-            'não é possível enviar informações para chat_id='
-            + str(message.chat.id)
-        )
+# @bot.message_handler(content_types=util.content_type_media)
+# async def all_messages(message: types.Message):
+#     try:
+#         if message.chat.id in ignored_chat_ids:
+#             return
+#         Thread(target=ignore, args=(message.chat.id, 1)).start()
+#         command = None
+#         if message.content_type == 'text':
+#             if message.text.startswith('/'):
+#                 command = message.text
+#                 if message.text.find(' ') > 0:
+#                     command = message.text[: message.text.find(' ')]
+#         if command is not None and command.lower().endswith(
+#             (await bot.get_me()).username.lower()
+#         ):
+#             command = command.split('@')[0]
+#         if message.chat.type == 'private':
+#             target = User.get_or_create(message.from_user)
+#             if target.has_dialog:
+#                 target.save()
+#             else:
+#                 await send_new_user_message(message.from_user)
+#         else:
+#             target = Group.get_or_create(message.chat)
+#             if target.has_dialog:
+#                 target.save()
+#             else:
+#                 await send_new_group_message(message.chat)
+#         if message.chat.type == 'private' and str(message.chat.id) in admins:
+#             if message.reply_to_message:
+#                 if message.reply_to_message.text in [
+#                     broadcast_text.format('users'),
+#                     broadcast_text.format('grupos'),
+#                 ]:
+#                     type_permited = [
+#                         'text',
+#                         'photo',
+#                         'audio',
+#                         'video',
+#                         'sticker',
+#                         'voice',
+#                         'video_note',
+#                         'animation',
+#                     ]
+#                     if message.content_type in type_permited:
+#                         target_type = ''
+#                         result_broadcast = {}
+#                         if (
+#                             message.reply_to_message.text
+#                             == broadcast_text.format('users')
+#                         ):
+#                             target_type = 'users'
+#                             result_broadcast = await send_message_broadcast(
+#                                 message, 'users'
+#                             )
+#                         elif (
+#                             message.reply_to_message.text
+#                             == broadcast_text.format('grupos')
+#                         ):
+#                             target_type = 'grupos'
+#                             result_broadcast = await send_message_broadcast(
+#                                 message, 'grupos'
+#                             )
+#                         else:
+#                             return
+#                         msg_result = (
+#                             f'\n──❑ 「 <b>Broadcast Completed</b> 」 ❑──\n\n ☆ Total {target_type}: {result_broadcast["actives"]+result_broadcast["inactives"]}\n'
+#                             f' ☆ Actives: {result_broadcast["actives"]}\n ☆ Inactives: {result_broadcast["inactives"]}\n'
+#                             f' ☆ Sucess: {result_broadcast["sucess"]}\n ☆ Fail: {result_broadcast["fail"]}'
+#                         )
+#                         await bot.send_message(
+#                             message.chat.id, msg_result, parse_mode='HTML'
+#                         )
+#                     else:
+#                         await bot.reply_to(message, 'Tipo não permitido')
+#                     return
+#     except Exception as e:
+#         logger.error(e)
+#         logger.warning(
+#             'não é possível enviar informações para chat_id='
+#             + str(message.chat.id)
+#         )
 
 
 @bot.my_chat_member_handler()
