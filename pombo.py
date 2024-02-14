@@ -230,6 +230,7 @@ async def send_new_group_message(chat):
         f'<b>Link:</b> {chatusername}',
         parse_mode='html',
         disable_web_page_preview=True,
+        message_thread_id=38545,
     )
 
 
@@ -369,7 +370,7 @@ async def inline_query_hide(inline_query: types.InlineQuery):
             return
         target.inline_queries_count += 1
         target.save()
-        
+
         if target.has_dialog:
             target.save()
         else:
