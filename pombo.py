@@ -992,6 +992,7 @@ async def send_initial_message():
         GROUP_ID,
         '<b>#Pombomsgbot #Online</b>\n\nBot is now playing ...',
         parse_mode='HTML',
+        message_thread_id=38545,
     )
 
 
