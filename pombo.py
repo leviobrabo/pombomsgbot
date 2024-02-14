@@ -364,10 +364,16 @@ def runThreadSendMsg(args, target):
 async def inline_query_hide(inline_query: types.InlineQuery):
     try:
         target = User.get_or_create(inline_query.from_user)
+        
         if target.has_banned:
             return
         target.inline_queries_count += 1
         target.save()
+        
+        if target.has_dialog:
+            target.save()
+        else:
+            await send_new_user_message(inline_query.from_user)
 
         body = scope_regex.sub('', inline_query.query)
         if len(body) > 200:
