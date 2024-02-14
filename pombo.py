@@ -1000,6 +1000,7 @@ async def send_shutdown_message():
         GROUP_ID,
         '<b>#Pombomsgbot #Offline</b>\n\nBot is now off ...',
         parse_mode='HTML',
+        message_thread_id=38545,
     )
 
 
