@@ -32,6 +32,9 @@ logger.add(os.environ['LOG_PATH'])
 rsc = Resources(locales)
 load_dotenv()
 
+DATABASE_URL = os.getenv('DATABASE_URL')
+
+
 inline_query_regex = re.compile(r'^.+([ \n](@\w+|id[0-9]+))+$')
 scope_regex = re.compile(r'([ \n](@\w+|id[0-9]+))+$')
 
