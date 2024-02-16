@@ -4,3 +4,4 @@ psycopg2==2.9.9
 APScheduler==3.10.4
 pyTelegramBotApi==4.15.4
 psutil==5.9.8
+python-dotenv==1.0.1

@@ -44,6 +44,7 @@ channelStatusId = int(os.environ['channelStatusId'])
 broadcast_text = 'Envie a mensagem que deseja compartilhar com os {}!'
 
 
+
 async def set_my_configs():
     for locale in locales.locales:
         try:
