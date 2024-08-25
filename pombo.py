@@ -112,6 +112,7 @@ async def sendStatus():
         f'#Pombomsgbot #Status\n\nStatus: ON\nPing: `{m_s}ms`\nUptime: `{uptime_formatted}`\nUsers: `{count_users()}`\nPrivate message: `{count_post()}`',
         chat_id=replied.chat.id,
         message_id=replied.message_id,
+        message_thread_id=38545,
         parse_mode='Markdown',
     )
 
@@ -215,7 +216,7 @@ async def send_new_user_message(user):
     text += f'<b>ID:</b> <code>{user.id}</code>\n'
     text += f"<b>Username:</b> {'@'+user.username if user.username else 'Não informado'}\n"
     text += f'<b>LANG:</b> {user.language_code.upper()}'
-    await bot.send_message(chat_id=group_id, text=text, parse_mode='HTML')
+    await bot.send_message(chat_id=group_id, text=text, message_thread_id=38545, parse_mode='HTML')
 
 
 async def send_new_group_message(chat):
