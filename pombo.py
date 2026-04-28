@@ -10,7 +10,7 @@ import os
 import random
 import re
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from threading import Thread
 from dotenv import load_dotenv
 
@@ -115,18 +115,6 @@ async def sendStatus():
         message_thread_id=38545,
         parse_mode='Markdown',
     )
-
-
-def timeFormatter(seconds):
-    hours = seconds // 3600
-    minutes = (seconds % 3600) // 60
-    secs = seconds % 60
-
-    hoursFormatted = str(hours).zfill(2)
-    minutesFormatted = str(minutes).zfill(2)
-    secondsFormatted = str(secs).zfill(2)
-
-    return f'{hoursFormatted}:{minutesFormatted}:{secondsFormatted}'
 
 
 start_time = time.time()
@@ -337,7 +325,7 @@ async def send_message_broadcast(message, receiver):
                         f'erro de Flood, tentativa: {_try} , esperar por:',
                         cooldown,
                     )
-                    time.sleep(cooldown + 1)
+                    await asyncio.sleep(cooldown + 1)
                     continue
                 else:
                     target_object.disable_user(user)
@@ -621,9 +609,9 @@ async def callback_query(call: types.CallbackQuery):
                         str(target.first_interaction_time),
                     )
                     .replace('{dialog}', 'Sim' if target.has_dialog else 'Não')
-                    .replace('{utc}', str(datetime.utcnow()))
-                    .replace('{date}', datetime.utcnow().strftime('%Y-%m-%d'))
-                    .replace('{time}', datetime.utcnow().strftime('%H:%M'))
+                    .replace('{utc}', str(datetime.now(timezone.utc)))
+                    .replace('{date}', datetime.now(timezone.utc).strftime('%Y-%m-%d'))
+                    .replace('{time}', datetime.now(timezone.utc).strftime('%H:%M'))
                     .replace('{name}', call.from_user.full_name)
                     .replace('{first_name}', target.first_name)
                     .replace(
@@ -870,88 +858,40 @@ async def cmd_broadcast(message: types.Message):
                 )
 
 
-# @bot.message_handler(content_types=util.content_type_media)
-# async def all_messages(message: types.Message):
-#     try:
-#         if message.chat.id in ignored_chat_ids:
-#             return
-#         Thread(target=ignore, args=(message.chat.id, 1)).start()
-#         command = None
-#         if message.content_type == 'text':
-#             if message.text.startswith('/'):
-#                 command = message.text
-#                 if message.text.find(' ') > 0:
-#                     command = message.text[: message.text.find(' ')]
-#         if command is not None and command.lower().endswith(
-#             (await bot.get_me()).username.lower()
-#         ):
-#             command = command.split('@')[0]
-#         if message.chat.type == 'private':
-#             target = User.get_or_create(message.from_user)
-#             if target.has_dialog:
-#                 target.save()
-#             else:
-#                 await send_new_user_message(message.from_user)
-#         else:
-#             target = Group.get_or_create(message.chat)
-#             if target.has_dialog:
-#                 target.save()
-#             else:
-#                 await send_new_group_message(message.chat)
-#         if message.chat.type == 'private' and str(message.chat.id) in admins:
-#             if message.reply_to_message:
-#                 if message.reply_to_message.text in [
-#                     broadcast_text.format('users'),
-#                     broadcast_text.format('grupos'),
-#                 ]:
-#                     type_permited = [
-#                         'text',
-#                         'photo',
-#                         'audio',
-#                         'video',
-#                         'sticker',
-#                         'voice',
-#                         'video_note',
-#                         'animation',
-#                     ]
-#                     if message.content_type in type_permited:
-#                         target_type = ''
-#                         result_broadcast = {}
-#                         if (
-#                             message.reply_to_message.text
-#                             == broadcast_text.format('users')
-#                         ):
-#                             target_type = 'users'
-#                             result_broadcast = await send_message_broadcast(
-#                                 message, 'users'
-#                             )
-#                         elif (
-#                             message.reply_to_message.text
-#                             == broadcast_text.format('grupos')
-#                         ):
-#                             target_type = 'grupos'
-#                             result_broadcast = await send_message_broadcast(
-#                                 message, 'grupos'
-#                             )
-#                         else:
-#                             return
-#                         msg_result = (
-#                             f'\n──❑ 「 <b>Broadcast Completed</b> 」 ❑──\n\n ☆ Total {target_type}: {result_broadcast["actives"]+result_broadcast["inactives"]}\n'
-#                             f' ☆ Actives: {result_broadcast["actives"]}\n ☆ Inactives: {result_broadcast["inactives"]}\n'
-#                             f' ☆ Sucess: {result_broadcast["sucess"]}\n ☆ Fail: {result_broadcast["fail"]}'
-#                         )
-#                         await bot.send_message(
-#                             message.chat.id, msg_result, parse_mode='HTML'
-#                         )
-#                     else:
-#                         await bot.reply_to(message, 'Tipo não permitido')
-#                     return
-#     except Exception as e:
-#         logger.error(e)
-#         logger.warning(
-#             'não é possível enviar informações para chat_id='
-#             + str(message.chat.id)
-#         )
+@bot.message_handler(
+    func=lambda m: (
+        m.chat.type == 'private'
+        and m.reply_to_message is not None
+        and m.reply_to_message.text in [
+            broadcast_text.format('users'),
+            broadcast_text.format('grupos'),
+        ]
+    ),
+    content_types=util.content_type_media,
+)
+async def cmd_broadcast_reply(message: types.Message):
+    try:
+        target = User.get_or_create(message.from_user)
+        if str(message.chat.id) not in admins and not target.has_sudo:
+            return
+        type_permitted = ['text', 'photo', 'audio', 'video', 'sticker', 'voice', 'video_note', 'animation']
+        if message.content_type not in type_permitted:
+            await bot.reply_to(message, 'Tipo não permitido')
+            return
+        if message.reply_to_message.text == broadcast_text.format('users'):
+            target_type = 'users'
+        else:
+            target_type = 'grupos'
+        result_broadcast = await send_message_broadcast(message, target_type)
+        msg_result = (
+            f'\n──❑ 「 <b>Broadcast Completed</b> 」 ❑──\n\n'
+            f' ☆ Total {target_type}: {result_broadcast["actives"] + result_broadcast["inactives"]}\n'
+            f' ☆ Actives: {result_broadcast["actives"]}\n ☆ Inactives: {result_broadcast["inactives"]}\n'
+            f' ☆ Sucess: {result_broadcast["sucess"]}\n ☆ Fail: {result_broadcast["fail"]}'
+        )
+        await bot.send_message(message.chat.id, msg_result, parse_mode='HTML')
+    except Exception as e:
+        logger.error(e)
 
 
 @bot.my_chat_member_handler()
@@ -1012,9 +952,11 @@ if __name__ == '__main__':
         logger.info('Start polling...')
         asyncio.run(send_initial_message())
         # asyncio.run(set_my_configs())
+        _broken_update_types = {'chat_boost_updated', 'chat_boost_removed'}
+        _allowed_updates = [t for t in util.update_types if t not in _broken_update_types]
         asyncio.run(
             bot.infinity_polling(
-                allowed_updates=util.update_types, skip_pending=True
+                allowed_updates=_allowed_updates, skip_pending=True
             )
         )
     except KeyboardInterrupt:

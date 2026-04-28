@@ -6,7 +6,7 @@
 # <https://github.com/leviobrabo/pombomsgbot/blob/main/LICENSE>.
 
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 from dotenv import load_dotenv
 
 from loguru import logger
@@ -107,8 +107,8 @@ class User(BaseModel):
                 language_code=user.language_code,
                 has_dialog=False,
                 inline_queries_count=0,
-                first_interaction_time=datetime.utcnow(),
-                last_interaction_time=datetime.utcnow(),
+                first_interaction_time=datetime.now(timezone.utc),
+                last_interaction_time=datetime.now(timezone.utc),
                 has_sudo=False,
                 has_banned=False,
             )
@@ -124,7 +124,7 @@ class User(BaseModel):
         self.first_name = user.first_name
         self.last_name = user.last_name
         self.language_code = user.language_code
-        self.last_interaction_time = datetime.utcnow()
+        self.last_interaction_time = datetime.now(timezone.utc)
         self.has_dialog = True
         self.save()
 
@@ -141,16 +141,19 @@ class User(BaseModel):
             self.has_banned,
         )
 
+    @staticmethod
     def set_sudo(user_id, sudo_user=True):
         result = User.get_by_id(user_id)
         result.has_sudo = sudo_user
         result.save()
 
+    @staticmethod
     def set_banned(user_id, ban_user=True):
         result = User.get_by_id(user_id)
         result.has_banned = ban_user
         result.save()
 
+    @staticmethod
     def disable_user(user_id):
         result = User.get_by_id(user_id)
         result.has_dialog = False
@@ -225,8 +228,8 @@ class Group(BaseModel):
                 title=group.title,
                 username=group.username,
                 has_dialog=False,
-                first_interaction_time=datetime.utcnow(),
-                last_interaction_time=datetime.utcnow(),
+                first_interaction_time=datetime.now(timezone.utc),
+                last_interaction_time=datetime.now(timezone.utc),
             )
             logger.info(
                 'novo usuário '
@@ -239,7 +242,7 @@ class Group(BaseModel):
         self.username = group.username
         self.type = group.type
         self.title = group.title
-        self.last_interaction_time = datetime.utcnow()
+        self.last_interaction_time = datetime.now(timezone.utc)
         self.has_dialog = True
         self.save()
 
@@ -253,6 +256,7 @@ class Group(BaseModel):
             self.last_interaction_time,
         )
 
+    @staticmethod
     def disable_user(user_id):
         result = Group.get_by_id(user_id)
         result.has_dialog = False
