@@ -18,7 +18,8 @@ class QueryResults:
 
     def message_too_long(self, lang: str):
         message_content = types.InputTextMessageContent(
-            self.locales[lang].too_long_message
+            self.locales[lang].too_long_message,
+            parse_mode='HTML'
         )
         return types.InlineQueryResultArticle(
             id='1',
@@ -37,13 +38,14 @@ class QueryResults:
                         callback_data=str(post_id)
                         + ' '
                         + PostMode.parse_key(PostMode.FOR),
-                        icon_custom_emoji_id='5212988389124483291'
+                        icon_custom_emoji_id='5429405838345265327'
                     )
                 ]
             ]
         )
         message_content = types.InputTextMessageContent(
-            self.locales[lang].for_message % scope_string
+            self.locales[lang].for_message % scope_string,
+            parse_mode='HTML'
         )
         return types.InlineQueryResultArticle(
             id=str(PostMode.FOR),
@@ -63,13 +65,14 @@ class QueryResults:
                         callback_data=str(post_id)
                         + ' '
                         + PostMode.parse_key(PostMode.EXCEPT),
-                        icon_custom_emoji_id='5212988389124483291'
+                        icon_custom_emoji_id='5429405838345265327'
                     )
                 ]
             ]
         )
         message_content = types.InputTextMessageContent(
-            self.locales[lang].except_message % scope_string
+            self.locales[lang].except_message % scope_string,
+            parse_mode='HTML'
         )
         return types.InlineQueryResultArticle(
             id=str(PostMode.EXCEPT),
@@ -89,13 +92,14 @@ class QueryResults:
                         callback_data=str(post_id)
                         + ' '
                         + PostMode.parse_key(PostMode.SPOILER),
-                        icon_custom_emoji_id='5212988389124483291'
+                        icon_custom_emoji_id='5429405838345265327'
                     )
                 ]
             ]
         )
         message_content = types.InputTextMessageContent(
-            self.locales[lang].spoiler_message
+            self.locales[lang].spoiler_message,
+            parse_mode='HTML'
         )
         return types.InlineQueryResultArticle(
             id=str(PostMode.SPOILER),
