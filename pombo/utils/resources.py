@@ -131,26 +131,26 @@ class Keyboards:
                     types.InlineKeyboardButton(
                         text=locale.button_support_message,
                         url='https://t.me/Kylorensbot',
-                        icon_custom_emoji_id='5235748511747681307'
+                        icon_custom_emoji_id='5220108512893344933'
                     ),
                 ],
                 [
                     types.InlineKeyboardButton(
                         text=locale.button_channel_message,
                         url='https://t.me/pombomsgbotchannel',
-                        icon_custom_emoji_id='5197288647275071607'
+                        icon_custom_emoji_id='5305417940760273444'
                     ),
                     types.InlineKeyboardButton(
                         text=locale.button_donate_message,
                         callback_data='donate_button',
-                        icon_custom_emoji_id='5325547803936572038'
+                        icon_custom_emoji_id='5316564471815101759'
                     ),
                 ],
                 [
                     types.InlineKeyboardButton(
                         text=locale.button_how_to_use, 
                         callback_data='how_to_use',
-                        icon_custom_emoji_id='5305417940760273444'
+                        icon_custom_emoji_id='5330522514231684724'
                     )
                 ],
             ]
