@@ -387,7 +387,7 @@ locale_ar.how_to_use = 'كيفية استخدام هذا الروبوت؟'
 
 
 # TOO_LONG_DESCRIPTION
-locale_pt.too_long_description = 'Reduza o tamanho da sua mensagem para que não exceda o limite de 200 caracteres. <tg-emoji emoji-id="5447315718825582234">🤏</tg-emoji>
+locale_pt.too_long_description = 'Reduza o tamanho da sua mensagem para que não exceda o limite de 200 caracteres. <tg-emoji emoji-id="5447315718825582234">🤏</tg-emoji>'
 locale_en.too_long_description = "Please shorten the length of your message so that it doesn't exceed the limit of 200 characters. <tg-emoji emoji-id='5447315718825582234'>🤏</tg-emoji>"
 locale_ru.too_long_description = 'Пожалуйста, сократите длину вашего сообщения, чтобы она не превышала лимит в 200 символов. <tg-emoji emoji-id="5447315718825582234">🤏</tg-emoji>'
 locale_uk.too_long_description = 'Будь ласка, скоротіть довжину Вашого повідомлення, щоб вона не перевищувала ліміт в 200 символів. <tg-emoji emoji-id="5447315718825582234">🤏</tg-emoji>'
