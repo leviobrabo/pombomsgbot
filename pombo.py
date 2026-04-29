@@ -546,6 +546,7 @@ async def callback_query(call: types.CallbackQuery):
                         types.InlineKeyboardButton(
                             locales[call.from_user.language_code].button_back,
                             callback_data='back_to_home',
+                            icon_costum_emoji_id='5436118790624518351',
                         )
                     ]
                 ]
