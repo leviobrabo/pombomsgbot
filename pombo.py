@@ -113,7 +113,7 @@ async def sendStatus():
         chat_id=replied.chat.id,
         message_id=replied.message_id,
         message_thread_id=38545,
-        parse_mode='Markdown',
+        parse_mode='HTML',
     )
 
 
@@ -218,7 +218,7 @@ async def send_new_group_message(chat):
         f'<b>Chat:</b> {chat.title}\n'
         f'<b>ID:</b> <code>{chat.id}</code>\n'
         f'<b>Link:</b> {chatusername}',
-        parse_mode='html',
+        parse_mode='HTML',
         disable_web_page_preview=True,
         message_thread_id=38545,
     )
@@ -821,7 +821,7 @@ async def cmd_start(message: types.Message):
         await bot.reply_to(
             message,
             text=locales[message.from_user.language_code].info_message,
-            parse_mode='html',
+            parse_mode='HTML',
             reply_markup=rsc.keyboards.info_keyboard(
                 lang=message.from_user.language_code
             ),
@@ -919,7 +919,7 @@ async def send_group_greeting(message: types.ChatMemberUpdated):
                     message.from_user.language_code
                 ].group_greeting_message
                 % (bot_user.full_name, bot_user.username),
-                parse_mode='html',
+                parse_mode='HTML',
                 disable_web_page_preview=True,
             )
         except Exception as e:

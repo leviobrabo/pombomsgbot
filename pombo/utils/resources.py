@@ -33,10 +33,11 @@ class QueryResults:
             keyboard=[
                 [
                     types.InlineKeyboardButton(
-                        self.locales[lang].view,
+                        text=self.locales[lang].view,
                         callback_data=str(post_id)
                         + ' '
                         + PostMode.parse_key(PostMode.FOR),
+                        icon_custom_emoji_id='5212988389124483291'
                     )
                 ]
             ]
@@ -58,10 +59,11 @@ class QueryResults:
             keyboard=[
                 [
                     types.InlineKeyboardButton(
-                        self.locales[lang].view,
+                        text=self.locales[lang].view,
                         callback_data=str(post_id)
                         + ' '
                         + PostMode.parse_key(PostMode.EXCEPT),
+                        icon_custom_emoji_id='5212988389124483291'
                     )
                 ]
             ]
@@ -83,10 +85,11 @@ class QueryResults:
             keyboard=[
                 [
                     types.InlineKeyboardButton(
-                        self.locales[lang].view,
+                        text=self.locales[lang].view,
                         callback_data=str(post_id)
                         + ' '
                         + PostMode.parse_key(PostMode.SPOILER),
+                        icon_custom_emoji_id='5212988389124483291'
                     )
                 ]
             ]
@@ -114,33 +117,40 @@ class Keyboards:
             keyboard=[
                 [
                     types.InlineKeyboardButton(
-                        locale.button_addGroup,
+                        text=locale.button_addGroup,
                         url='https://t.me/pombomsgbot?startgroup=true',
+                        icon_custom_emoji_id='5364041173449076983'
                     )
                 ],
                 [
                     types.InlineKeyboardButton(
-                        locale.button_use_message,
+                        text=locale.button_use_message,
                         url='https://t.me/+0ommac6hJVphMGNh',
+                        icon_custom_emoji_id='5258513401784573443'
                     ),
                     types.InlineKeyboardButton(
-                        locale.button_support_message,
+                        text=locale.button_support_message,
                         url='https://t.me/Kylorensbot',
+                        icon_custom_emoji_id='5235748511747681307'
                     ),
                 ],
                 [
                     types.InlineKeyboardButton(
-                        locale.button_channel_message,
+                        text=locale.button_channel_message,
                         url='https://t.me/pombomsgbotchannel',
+                        icon_custom_emoji_id='5197288647275071607'
                     ),
                     types.InlineKeyboardButton(
-                        locale.button_donate_message,
+                        text=locale.button_donate_message,
                         callback_data='donate_button',
+                        icon_custom_emoji_id='5325547803936572038'
                     ),
                 ],
                 [
                     types.InlineKeyboardButton(
-                        locale.button_how_to_use, callback_data='how_to_use'
+                        text=locale.button_how_to_use, 
+                        callback_data='how_to_use',
+                        icon_custom_emoji_id='5305417940760273444'
                     )
                 ],
             ]
