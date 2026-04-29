@@ -39,261 +39,261 @@ locales = LocalesDict(
 )
 
 # TOO_LONG_TITLE
-locale_pt.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮 Sua mensagem é muito longa'
-locale_en.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮 Your message is too long'
-locale_ru.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮 Слишком длинное сообщение'
-locale_uk.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮 Занадто довге повідомлення'
-locale_de.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮 Deine Nachricht ist zu lang'
-locale_it.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮 Il tuo messaggio è troppo lungo'
-locale_de.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮 Deine Nachricht ist zu lang'
-locale_fr.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮 Votre message est trop long'
-locale_es.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮 Tu mensaje es demasiado largo'
-locale_ja.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮 メッセージが長すぎます'
-locale_zh.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮 你的信息太長了'
-locale_hi.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮 आपका संदेश बहुत लंबा है'
-locale_ar.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮 رسالتك طويلة جدًا'
+locale_pt.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮</tg-emoji> Sua mensagem é muito longa'
+locale_en.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮</tg-emoji> Your message is too long'
+locale_ru.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮</tg-emoji> Слишком длинное сообщение'
+locale_uk.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮</tg-emoji> Занадто довге повідомлення'
+locale_de.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮</tg-emoji> Deine Nachricht ist zu lang'
+locale_it.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮</tg-emoji> Il tuo messaggio è troppo lungo'
+locale_de.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮</tg-emoji> Deine Nachricht ist zu lang'
+locale_fr.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮</tg-emoji> Votre message est trop long'
+locale_es.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮</tg-emoji> Tu mensaje es demasiado largo'
+locale_ja.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮</tg-emoji> メッセージが長すぎます'
+locale_zh.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮</tg-emoji> 你的信息太長了'
+locale_hi.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮</tg-emoji> आपका संदेश बहुत लंबा है'
+locale_ar.too_long_title = '<tg-emoji emoji-id="6030549312432247607">😮</tg-emoji> رسالتك طويلة جدًا'
 
 # FOR_TITLE
-locale_pt.for_title = '<tg-emoji emoji-id="6030702290577395061">💬 Enviar mensagem para  %s'
-locale_en.for_title = '<tg-emoji emoji-id="6030702290577395061">💬 For %s'
-locale_ru.for_title = '<tg-emoji emoji-id="6030702290577395061">💬 Для %s'
-locale_uk.for_title = '<tg-emoji emoji-id="6030702290577395061">💬 Для %s'
-locale_de.for_title = '<tg-emoji emoji-id="6030702290577395061">💬 Für %s'
-locale_it.for_title = '<tg-emoji emoji-id="6030702290577395061">💬 Per %s'
-locale_fr.for_title = '<tg-emoji emoji-id="6030702290577395061">💬 Pour %s'
-locale_es.for_title = '<tg-emoji emoji-id="6030702290577395061">💬 Para %s'
-locale_ja.for_title = '<tg-emoji emoji-id="6030702290577395061">💬 %s へ'
-locale_zh.for_title = '<tg-emoji emoji-id="6030702290577395061">💬 发送消息给 %s'
-locale_hi.for_title = '<tg-emoji emoji-id="6030702290577395061">💬 Untuk %s'
-locale_ar.for_title = '<tg-emoji emoji-id="6030702290577395061">💬 برای %s'
+locale_pt.for_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Enviar mensagem para  %s'
+locale_en.for_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> For %s'
+locale_ru.for_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Для %s'
+locale_uk.for_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Для %s'
+locale_de.for_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Für %s'
+locale_it.for_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Per %s'
+locale_fr.for_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Pour %s'
+locale_es.for_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Para %s'
+locale_ja.for_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> %s へ'
+locale_zh.for_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> 发送消息给 %s'
+locale_hi.for_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Untuk %s'
+locale_ar.for_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> برای %s'
 
 # EXCEPT_TITLE
-locale_pt.except_title = '<tg-emoji emoji-id="6030702290577395061">💬 Enviar mensagem para para todos, menos %s'
-locale_en.except_title = '<tg-emoji emoji-id="6030702290577395061">💬 Except %s'
-locale_ru.except_title = '<tg-emoji emoji-id="6030702290577395061">💬 Кроме %s'
-locale_uk.except_title = '<tg-emoji emoji-id="6030702290577395061">💬 Крім %s'
-locale_de.except_title = '<tg-emoji emoji-id="6030702290577395061">💬 Akzeptiere %s'
-locale_it.except_title = '<tg-emoji emoji-id="6030702290577395061">💬 Tranne %s'
-locale_fr.except_title = '<tg-emoji emoji-id="6030702290577395061">💬 Sauf %s'
-locale_es.except_title = '<tg-emoji emoji-id="6030702290577395061">💬 Excepto %s'
-locale_ja.except_title = '<tg-emoji emoji-id="6030702290577395061">💬 %s を除く'
-locale_zh.except_title = '<tg-emoji emoji-id="6030702290577395061">💬 除了 %s'
-locale_hi.except_title = '<tg-emoji emoji-id="6030702290577395061">💬 %s को छोड़कर'
-locale_ar.except_title = '<tg-emoji emoji-id="6030702290577395061">💬 باستثناء %s'
+locale_pt.except_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Enviar mensagem para para todos, menos %s'
+locale_en.except_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Except %s'
+locale_ru.except_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Кроме %s'
+locale_uk.except_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Крім %s'
+locale_de.except_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Akzeptiere %s'
+locale_it.except_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Tranne %s'
+locale_fr.except_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Sauf %s'
+locale_es.except_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Excepto %s'
+locale_ja.except_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> %s を除く'
+locale_zh.except_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> 除了 %s'
+locale_hi.except_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> %s को छोड़कर'
+locale_ar.except_title = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> باستثناء %s'
 
 # SPOILER_TITLE
-locale_pt.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅ Revelar mensagem para todos'
-locale_en.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅ Spoiler'
-locale_ru.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅ Спойлер'
-locale_uk.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅ Спойлер'
-locale_de.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅ Spoiler'
-locale_it.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅ Spoiler'
-locale_fr.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅ Spoiler'
-locale_es.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅ Spoiler'
-locale_ja.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅ スポイラー'
-locale_zh.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅ 劇透'
-locale_hi.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅ स्पॉइलर'
-locale_ar.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅ سبويلر'
+locale_pt.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅</tg-emoji> Revelar mensagem para todos'
+locale_en.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅</tg-emoji> Spoiler'
+locale_ru.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅</tg-emoji> Спойлер'
+locale_uk.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅</tg-emoji> Спойлер'
+locale_de.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅</tg-emoji> Spoiler'
+locale_it.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅</tg-emoji> Spoiler'
+locale_fr.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅</tg-emoji> Spoiler'
+locale_es.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅</tg-emoji> Spoiler'
+locale_ja.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅</tg-emoji> スポイラー'
+locale_zh.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅</tg-emoji> 劇透'
+locale_hi.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅</tg-emoji> स्पॉइलर'
+locale_ar.spoiler_title = '<tg-emoji emoji-id="5469730010682117858">✅</tg-emoji> سبويلر'
 
 # TOO_LONG_MESSAGE
-locale_pt.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺 Desculpe, sua mensagem não pode ser enviada porque excedeu o limite de 200 caracteres.'
-locale_en.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺 Sorry, your message can\'t be sent as it exceeds the limit of 200 characters.'
-locale_ru.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺 Ваше сообщение не может быть отправлено, так как его длина превышает лимит в 200 символов.'
-locale_uk.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺 Ваше повідомлення не може бути відправлено, так як його довжина перевищує ліміт в 200 символів.'
-locale_de.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺 Sorry, deine Nachricht kann nicht gesendet werden, da sie das Limit von 200 Zeichen überschreitet.'
-locale_it.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺 Mi dispiace, il tuo messaggio non può essere mandato, supera il limite di 200 caratteri.'
-locale_fr.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺 Désolé, votre message ne peut pas être envoyé car il dépasse la limite de 200 caractères.'
-locale_es.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺 Lo siento, tu mensaje no puede ser enviado ya que excede el límite de 200 caracteres.'
-locale_ja.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺 200文字の制限を超えたため、メッセージを送信できません。'
-locale_zh.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺 对不起，您的消息无法发送，因为它超过了200个字符的限制。'
-locale_hi.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺 क्षमा करें, आपका संदेश 200 अक्षरों की सीमा से अधिक होने के कारण भेजा नहीं जा सकता है।'
+locale_pt.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺</tg-emoji> Desculpe, sua mensagem não pode ser enviada porque excedeu o limite de 200 caracteres.'
+locale_en.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺</tg-emoji> Sorry, your message can\'t be sent as it exceeds the limit of 200 characters.'
+locale_ru.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺</tg-emoji> Ваше сообщение не может быть отправлено, так как его длина превышает лимит в 200 символов.'
+locale_uk.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺</tg-emoji> Ваше повідомлення не може бути відправлено, так як його довжина перевищує ліміт в 200 символів.'
+locale_de.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺</tg-emoji> Sorry, deine Nachricht kann nicht gesendet werden, da sie das Limit von 200 Zeichen überschreitet.'
+locale_it.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺</tg-emoji> Mi dispiace, il tuo messaggio non può essere mandato, supera il limite di 200 caratteri.'
+locale_fr.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺</tg-emoji> Désolé, votre message ne peut pas être envoyé car il dépasse la limite de 200 caractères.'
+locale_es.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺</tg-emoji> Lo siento, tu mensaje no puede ser enviado ya que excede el límite de 200 caracteres.'
+locale_ja.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺</tg-emoji> 200文字の制限を超えたため、メッセージを送信できません。'
+locale_zh.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺</tg-emoji> 对不起，您的消息无法发送，因为它超过了200个字符的限制。'
+locale_hi.too_long_message = '<tg-emoji emoji-id="5235748511747681307">🥺</tg-emoji> क्षमा करें, आपका संदेश 200 अक्षरों की सीमा से अधिक होने के कारण भेजा नहीं जा सकता है।'
 locale_ar.too_long_message = (
-    '<tg-emoji emoji-id="5235748511747681307">🥺 عذرا، لا يمكن إرسال رسالتك لأنها تتجاوز الحد المسموح به من 200 حرف.'
+    '<tg-emoji emoji-id="5235748511747681307">🥺</tg-emoji> عذرا، لا يمكن إرسال رسالتك لأنها تتجاوز الحد المسموح به من 200 حرف.'
 )
 
 # FOR_MESSAGE
-locale_pt.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒 Mensagem secreta enviada com sucesso para %s.'
-locale_en.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒 Private message for %s.'
-locale_ru.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒 Приватное сообщение для %s.'
-locale_uk.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒 Приватне повідомлення для %s.'
-locale_de.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒 Private Nachricht für %s.'
-locale_it.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒 Messaggio privato per %s.'
-locale_fr.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒 Message privé pour %s.'
-locale_es.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒 Mensaje privado para %s.'
-locale_ja.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒 %s へのプライベート メッセージ。'
-locale_zh.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒 給 %s 的私信。'
-locale_hi.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒 %s के लिए निजी संदेश।'
-locale_ar.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒 رسالة خاصة ل %s.'
+locale_pt.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒</tg-emoji> Mensagem secreta enviada com sucesso para %s.'
+locale_en.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒</tg-emoji> Private message for %s.'
+locale_ru.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒</tg-emoji> Приватное сообщение для %s.'
+locale_uk.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒</tg-emoji> Приватне повідомлення для %s.'
+locale_de.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒</tg-emoji> Private Nachricht für %s.'
+locale_it.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒</tg-emoji> Messaggio privato per %s.'
+locale_fr.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒</tg-emoji> Message privé pour %s.'
+locale_es.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒</tg-emoji> Mensaje privado para %s.'
+locale_ja.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒</tg-emoji> %s へのプライベート メッセージ。'
+locale_zh.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒</tg-emoji> 給 %s 的私信。'
+locale_hi.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒</tg-emoji> %s के लिए निजी संदेश।'
+locale_ar.for_message = '<tg-emoji emoji-id="5197288647275071607">🔒</tg-emoji> رسالة خاصة ل %s.'
 
 # EXCEPT_MESSAGE
-locale_pt.except_message = '<tg-emoji emoji-id="6030702290577395061">💬 %s, você foi excluído(a) desta mensagem secreta.'
-locale_en.except_message = '<tg-emoji emoji-id="6030702290577395061">💬 Private message for everyone except %s.'
-locale_ru.except_message = '<tg-emoji emoji-id="6030702290577395061">💬 Приватное сообщение для всех, кроме %s.'
-locale_uk.except_message = '<tg-emoji emoji-id="6030702290577395061">💬 Приватне повідомлення для всіх, крім %s.'
-locale_de.except_message = '<tg-emoji emoji-id="6030702290597395061">💬 Private Nachricht an alle außer %s.'
-locale_it.except_message = '<tg-emoji emoji-id="6030702290577395061">💬 Messaggio privato per tutti tranne %s.'
-locale_fr.except_message = '<tg-emoji emoji-id="6030702290577395061">💬 Message privé pour tout le monde sauf %s.'
-locale_es.except_message = '<tg-emoji emoji-id="6030702290577395061">💬 Mensaje privado para todos excepto %s.'
-locale_ja.except_message = '<tg-emoji emoji-id="6030702290577395061">💬 %s以外の全員へのプライベートメッセージ。'
-locale_zh.except_message = '<tg-emoji emoji-id="6030702290577395061">💬 给除%s之外的所有人的私人消息。'
-locale_hi.except_message = '<tg-emoji emoji-id="6030702290577395061">💬 %s को छोड़कर सभी के लिए निजी संदेश।'
-locale_ar.except_message = '<tg-emoji emoji-id="6030702290577395061">💬 رسالة خاصة للجميع ما عدا %s.'
+locale_pt.except_message = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> %s, você foi excluído(a) desta mensagem secreta.'
+locale_en.except_message = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Private message for everyone except %s.'
+locale_ru.except_message = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Приватное сообщение для всех, кроме %s.'
+locale_uk.except_message = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Приватне повідомлення для всіх, крім %s.'
+locale_de.except_message = '<tg-emoji emoji-id="6030702290597395061">💬</tg-emoji> Private Nachricht an alle außer %s.'
+locale_it.except_message = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Messaggio privato per tutti tranne %s.'
+locale_fr.except_message = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Message privé pour tout le monde sauf %s.'
+locale_es.except_message = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> Mensaje privado para todos excepto %s.'
+locale_ja.except_message = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> %s以外の全員へのプライベートメッセージ。'
+locale_zh.except_message = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> 给除%s之外的所有人的私人消息。'
+locale_hi.except_message = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> %s को छोड़कर सभी के लिए निजी संदेश।'
+locale_ar.except_message = '<tg-emoji emoji-id="6030702290577395061">💬</tg-emoji> رسالة خاصة للجميع ما عدا %s.'
 
 
 # SPOILER_MESSAGE
 locale_pt.spoiler_message = (
-    '<tg-emoji emoji-id="5258513401784573443">👥 Mensagem enviada para todos os integrantes do grupo.'
+    '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> Mensagem enviada para todos os integrantes do grupo.'
 )
-locale_en.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥 Public spoiler message.'
-locale_ru.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥 Публичное сообщение под спойлером.'
-locale_uk.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥 Публічне повідомлення під спойлером.'
-locale_de.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥 Öffentlicher Spoiler für alle:'
-locale_it.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥 Messaggio contenente spoiler.'
-locale_fr.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥 Spoiler public.'
-locale_es.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥 Spoiler público.'
-locale_ja.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥 パブリックスポイラーメッセージ。'
-locale_zh.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥 公共剧透消息。'
-locale_hi.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥 सार्वजनिक स्पॉइलर संदेश।'
-locale_ar.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥 رسالة حرق للجميع.'
+locale_en.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> Public spoiler message.'
+locale_ru.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> Публичное сообщение под спойлером.'
+locale_uk.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> Публічне повідомлення під спойлером.'
+locale_de.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> Öffentlicher Spoiler für alle:'
+locale_it.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> Messaggio contenente spoiler.'
+locale_fr.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> Spoiler public.'
+locale_es.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> Spoiler público.'
+locale_ja.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> パブリックスポイラーメッセージ。'
+locale_zh.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> 公共剧透消息。'
+locale_hi.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> सार्वजनिक स्पॉइलर संदेश।'
+locale_ar.spoiler_message = '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> رسالة حرق للجميع.'
 
 
 # GROUP_GREETING_MESSAGE
 locale_pt.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 Olá, meu nome é %s! Obrigado por me adicionar em seu grupo\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ Posso ajudá-lo a enviar mensagens privadas que apenas os usuarios escolhidos por você podem ver.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 Para saber mais envie /start@%s e sinta-se à vontade para pedir ajuda em nosso '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> Olá, meu nome é %s! Obrigado por me adicionar em seu grupo\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> Posso ajudá-lo a enviar mensagens privadas que apenas os usuarios escolhidos por você podem ver.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> Para saber mais envie /start@%s e sinta-se à vontade para pedir ajuda em nosso '
     '<a href="t.me/pombomsgbotchannel">Canal oficial</a> e <a href="t.me/kylorensbot">Suporte</a> se você tiver alguma dúvida.'
 )
 locale_en.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 Hello, my name is %s! Thanks for adding me to your group\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ I can help you send private messages that only the users you choose can see.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 To learn more send /start@%s and feel free to ask for help on our '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> Hello, my name is %s! Thanks for adding me to your group\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> I can help you send private messages that only the users you choose can see.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> To learn more send /start@%s and feel free to ask for help on our '
     '<a href="t.me/pombomsgbotchannel">Official channel</a> and <a href="t.me/kylorensbot">Support</a> if you have any questions.'
 )
 locale_ru.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 Привет, меня зовут %s! Спасибо, что добавили меня в свою группу\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ Я могу помочь вам отправлять личные сообщения, которые могут видеть только выбранные вами пользователи.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 Чтобы узнать больше, отправьте /start@%s и не стесняйтесь обращаться за помощью в нашу '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> Привет, меня зовут %s! Спасибо, что добавили меня в свою группу\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> Я могу помочь вам отправлять личные сообщения, которые могут видеть только выбранные вами пользователи.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> Чтобы узнать больше, отправьте /start@%s и не стесняйтесь обращаться за помощью в нашу '
     '<a href="t.me/pombomsgbotchannel">Официальный канал</a> и <a href="t.me/kylorensbot">Поддержка</a>, если у вас есть какие-либо вопросы.'
 )
 locale_uk.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 Привіт, мене звати %s! Дякую за додавання мене до вашої групи\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ Я можу допомогти вам надсилати приватні повідомлення, які можуть бачити тільки користувачі, яких ви виберете.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 Щоб дізнатися більше, відправте /start@%s та не соромтеся звертатися за допомогою до нашого '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> Привіт, мене звати %s! Дякую за додавання мене до вашої групи\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> Я можу допомогти вам надсилати приватні повідомлення, які можуть бачити тільки користувачі, яких ви виберете.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> Щоб дізнатися більше, відправте /start@%s та не соромтеся звертатися за допомогою до нашого '
     '<a href="t.me/pombomsgbotchannel">Офіційного каналу</a> та <a href="t.me/kylorensbot">Підтримки</a>, якщо у вас є якісь питання.'
 )
 locale_de.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 Hallo, mein Name ist %s! Danke, dass du mich zu deiner Gruppe hinzugefügt hast\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ Ich kann dir helfen, private Nachrichten zu senden, die nur die von dir ausgewählten Benutzer sehen können.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 Um mehr zu erfahren, senden Sie /start@%s und fragen Sie auf unserer '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> Hallo, mein Name ist %s! Danke, dass du mich zu deiner Gruppe hinzugefügt hast\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> Ich kann dir helfen, private Nachrichten zu senden, die nur die von dir ausgewählten Benutzer sehen können.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> Um mehr zu erfahren, senden Sie /start@%s und fragen Sie auf unserer '
     '<a href="t.me/pombomsgbotchannel">Offizieller Kanal</a> und <a href="t.me/kylorensbot">Support</a>, wenn Sie Fragen haben.'
 )
 locale_it.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 Ciao, mi chiamo %s! Grazie per avermi aggiunto al tuo gruppo\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ Posso aiutarti a inviare messaggi privati che solo gli utenti che scegli possono vedere.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 Per saperne di più invia /start@%s e sentiti libero di chiedere aiuto sul nostro '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> Ciao, mi chiamo %s! Grazie per avermi aggiunto al tuo gruppo\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> Posso aiutarti a inviare messaggi privati che solo gli utenti che scegli possono vedere.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> Per saperne di più invia /start@%s e sentiti libero di chiedere aiuto sul nostro '
     '<a href="t.me/pombomsgbotchannel">Canale ufficiale</a> e <a href="t.me/kylorensbot">Assistenza</a> in caso di domande.'
 )
 locale_fr.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 Bonjour, je m\'appelle %s! Merci de m\'avoir ajouté à votre groupe\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ Je peux vous aider à envoyer des messages privés que seuls les utilisateurs que vous choisissez peuvent voir.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 Pour en savoir plus, envoyez /start@%s et n\'hésitez pas à demander de l\'aide sur notre '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> Bonjour, je m\'appelle %s! Merci de m\'avoir ajouté à votre groupe\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> Je peux vous aider à envoyer des messages privés que seuls les utilisateurs que vous choisissez peuvent voir.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> Pour en savoir plus, envoyez /start@%s et n\'hésitez pas à demander de l\'aide sur notre '
     '<a href="t.me/pombomsgbotchannel">Chaîne officielle</a> et <a href="t.me/kylorensbot">Assistance</a> si vous avez des questions.'
 )
 locale_es.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 ¡Hola, mi nombre es %s! Gracias por agregarme a tu grupo\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ Puedo ayudarte a enviar mensajes privados que solo pueden ver los usuarios que elijas.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 Para obtener más información, envíe /start@%s y no dude en solicitar ayuda en nuestro '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> ¡Hola, mi nombre es %s! Gracias por agregarme a tu grupo\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> Puedo ayudarte a enviar mensajes privados que solo pueden ver los usuarios que elijas.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> Para obtener más información, envíe /start@%s y no dude en solicitar ayuda en nuestro '
     '<a href="t.me/pombomsgbotchannel">Canal oficial</a> y <a href="t.me/kylorensbot">Soporte</a> si tiene alguna pregunta.'
 )
 locale_ja.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509"><tg-emoji emoji-id="5938028303762853509">👋 こんにちは、私の名前は%sです！グループに追加していただきありがとうございます\n\n'
-    '<tg-emoji emoji-id="4969923081603645985"><tg-emoji emoji-id="4969923081603645985">🗺️ あなたが選んだユーザーだけが見ることができるプライベートメッセージを送信するのを手伝うことができます。\n\n'
-    '<tg-emoji emoji-id="5388787654022148728"><tg-emoji emoji-id="5388787654022148728">🔱 もっと詳しく知りたい場合は、/start@%s を送信して、質問がある場合は '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> こんにちは、私の名前は%sです！グループに追加していただきありがとうございます\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> あなたが選んだユーザーだけが見ることができるプライベートメッセージを送信するのを手伝うことができます。\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> もっと詳しく知りたい場合は、/start@%s を送信して、質問がある場合は '
     '<a href="t.me/pombomsgbotchannel">公式チャンネル</a>と<a href="t.me/kylorensbot">サポート</a>にお問い合わせください。'
 )
 locale_zh.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 你好，我的名字是%s！感谢将我添加到你的群组中\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ 我可以帮助你发送仅有你选择的用户可以看到的私人消息\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 要了解更多，请发送 /start@%s，并随时在我们的 '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> 你好，我的名字是%s！感谢将我添加到你的群组中\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> 我可以帮助你发送仅有你选择的用户可以看到的私人消息\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> 要了解更多，请发送 /start@%s，并随时在我们的 '
     '<a href="t.me/pombomsgbotchannel">官方频道</a>和<a href="t.me/kylorensbot">支持</a>上寻求帮助，如果您有任何问题。'
 )
 locale_hi.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 नमस्ते, मेरा नाम %s है! आपके समूह में जोड़ने के लिए धन्यवाद\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ मैं आपको उन निश्चित उपयोगकर्ताओं तक निजी संदेश भेजने में मदद कर सकता हूँ, जो आप चुनते हैं।\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 और अधिक जानने के लिए /start@%s भेजें और अगर आपके पास कोई सवाल हो तो हमारे '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> नमस्ते, मेरा नाम %s है! आपके समूह में जोड़ने के लिए धन्यवाद\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> मैं आपको उन निश्चित उपयोगकर्ताओं तक निजी संदेश भेजने में मदद कर सकता हूँ, जो आप चुनते हैं।\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> और अधिक जानने के लिए /start@%s भेजें और अगर आपके पास कोई सवाल हो तो हमारे '
     '<a href="t.me/pombomsgbotchannel">आधिकारिक चैनल</a> और <a href="t.me/kylorensbot">सहायता</a> पर मदद के लिए पूछने में स्वतंत्र महसूस करें। '
 )
 locale_ar.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 مرحبًا ، اسمي %s! شكرًا على إضافتي إلى مجموعتك\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ يمكنني مساعدتك في إرسال رسائل خاصة يمكن للمستخدمين الذين تختارهم فقط رؤيتها.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 للمزيد من المعلومات ، أرسل /start@%s ولا تتردد في طلب المساعدة على '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> مرحبًا ، اسمي %s! شكرًا على إضافتي إلى مجموعتك\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> يمكنني مساعدتك في إرسال رسائل خاصة يمكن للمستخدمين الذين تختارهم فقط رؤيتها.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> للمزيد من المعلومات ، أرسل /start@%s ولا تتردد في طلب المساعدة على '
     '<a href="t.me/pombomsgbotchannel">القناة الرسمية</a> و <a href="t.me/kylorensbot">الدعم</a> إذا كان لديك أي أسئلة.'
 )
 locale_en.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509"><tg-emoji emoji-id="5938028303762853509">👋 Hello, my name is %s! Thanks for adding me to your group\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ I can help you send private messages that only the users you choose can see.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 To learn more send /start@%s and feel free to ask for help on our '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> Hello, my name is %s! Thanks for adding me to your group\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> I can help you send private messages that only the users you choose can see.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> To learn more send /start@%s and feel free to ask for help on our '
     '<a href="t.me/pombomsgbotchannel">Official channel</a> and <a href="t.me/kylorensbot">Support</a> if you have any questions.'
 )
 locale_ru.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 Привет, меня зовут %s! Спасибо, что добавили меня в свою группу\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ Я могу помочь вам отправлять личные сообщения, которые могут видеть только выбранные вами пользователи.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 Чтобы узнать больше, отправьте /start@%s и не стесняйтесь обращаться за помощью в нашу '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> Привет, меня зовут %s! Спасибо, что добавили меня в свою группу\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> Я могу помочь вам отправлять личные сообщения, которые могут видеть только выбранные вами пользователи.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> Чтобы узнать больше, отправьте /start@%s и не стесняйтесь обращаться за помощью в нашу '
     '<a href="t.me/pombomsgbotchannel">Официальный канал</a> и <a href="t.me/kylorensbot">Поддержка</a>, если у вас есть какие-либо вопросы.'
 )
 locale_uk.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 Привіт, мене звати %s! Дякую за додавання мене до вашої групи\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ Я можу допомогти вам надсилати приватні повідомлення, які можуть бачити тільки користувачі, яких ви виберете.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 Щоб дізнатися більше, відправте /start@%s та не соромтеся звертатися за допомогою до нашого '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> Привіт, мене звати %s! Дякую за додавання мене до вашої групи\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> Я можу допомогти вам надсилати приватні повідомлення, які можуть бачити тільки користувачі, яких ви виберете.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> Щоб дізнатися більше, відправте /start@%s та не соромтеся звертатися за допомогою до нашого '
     '<a href="t.me/pombomsgbotchannel">Офіційного каналу</a> та <a href="t.me/kylorensbot">Підтримки</a>, якщо у вас є якісь питання.'
 )
 locale_de.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 Hallo, mein Name ist %s! Danke, dass du mich zu deiner Gruppe hinzugefügt hast\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ Ich kann dir helfen, private Nachrichten zu senden, die nur die von dir ausgewählten Benutzer sehen können.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 Um mehr zu erfahren, senden Sie /start@%s und fragen Sie auf unserer '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> Hallo, mein Name ist %s! Danke, dass du mich zu deiner Gruppe hinzugefügt hast\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> Ich kann dir helfen, private Nachrichten zu senden, die nur die von dir ausgewählten Benutzer sehen können.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> Um mehr zu erfahren, senden Sie /start@%s und fragen Sie auf unserer '
     '<a href="t.me/pombomsgbotchannel">Offizieller Kanal</a> und <a href="t.me/kylorensbot">Support</a>, wenn Sie Fragen haben.'
 )
 locale_it.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 Ciao, mi chiamo %s! Grazie per avermi aggiunto al tuo gruppo\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ Posso aiutarti a inviare messaggi privati che solo gli utenti che scegli possono vedere.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 Per saperne di più invia /start@%s e sentiti libero di chiedere aiuto sul nostro '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> Ciao, mi chiamo %s! Grazie per avermi aggiunto al tuo gruppo\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> Posso aiutarti a inviare messaggi privati che solo gli utenti che scegli possono vedere.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> Per saperne di più invia /start@%s e sentiti libero di chiedere aiuto sul nostro '
     '<a href="t.me/pombomsgbotchannel">Canale ufficiale</a> e <a href="t.me/kylorensbot">Assistenza</a> in caso di domande.'
 )
 locale_fr.group_greeting_message = (
-    "<tg-emoji emoji-id='5938028303762853509'>👋 Bonjour, je m'appelle %s! Merci de m'avoir ajouté à votre groupe\n\n"
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ Je peux vous aider à envoyer des messages privés que seuls les utilisateurs que vous choisissez peuvent voir.\n\n'
-    "<tg-emoji emoji-id='5388787654022148728'>🔱 Pour en savoir plus, envoyez /start@%s et n'hésitez pas à demander de l'aide sur notre "
+    "<tg-emoji emoji-id='5938028303762853509'>👋</tg-emoji> Bonjour, je m'appelle %s! Merci de m'avoir ajouté à votre groupe\n\n"
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> Je peux vous aider à envoyer des messages privés que seuls les utilisateurs que vous choisissez peuvent voir.\n\n'
+    "<tg-emoji emoji-id='5388787654022148728'>🔱</tg-emoji> Pour en savoir plus, envoyez /start@%s et n'hésitez pas à demander de l'aide sur notre "
     '<a href="t.me/pombomsgbotchannel">Chaîne officielle</a> et <a href="t.me/kylorensbot">Assistance</a> si vous avez des questions.'
 )
 locale_es.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 ¡Hola, mi nombre es %s! Gracias por agregarme a tu grupo\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ Puedo ayudarte a enviar mensajes privados que solo pueden ver los usuarios que elijas.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 Para obtener más información, envíe /start@%s y no dude en solicitar ayuda en nuestro '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> ¡Hola, mi nombre es %s! Gracias por agregarme a tu grupo\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> Puedo ayudarte a enviar mensajes privados que solo pueden ver los usuarios que elijas.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> Para obtener más información, envíe /start@%s y no dude en solicitar ayuda en nuestro '
     '<a href="t.me/pombomsgbotchannel">Canal oficial</a> y <a href="t.me/kylorensbot">Soporte</a> si tiene alguna pregunta.'
 )
 locale_ja.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 こんにちは、私の名前は%sです！グループに追加していただきありがとうございます\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ あなたが選んだユーザーだけが見ることができるプライベートメッセージを送信するのを手伝うことができます。\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 もっと詳しく知りたい場合は、/start@%s を送信して、質問がある場合は '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> こんにちは、私の名前は%sです！グループに追加していただきありがとうございます\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> あなたが選んだユーザーだけが見ることができるプライベートメッセージを送信するのを手伝うことができます。\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> もっと詳しく知りたい場合は、/start@%s を送信して、質問がある場合は '
     '<a href="t.me/pombomsgbotchannel">公式チャンネル</a>と<a href="t.me/kylorensbot">サポート</a>にお問い合わせください。'
 )
 locale_zh.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 你好，我的名字是%s！感谢将我添加到你的群组中\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ 我可以帮助你发送仅有你选择的用户可以看到的私人消息\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 要了解更多，请发送 /start@%s，并随时在我们的 '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> 你好，我的名字是%s！感谢将我添加到你的群组中\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> 我可以帮助你发送仅有你选择的用户可以看到的私人消息\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> 要了解更多，请发送 /start@%s，并随时在我们的 '
     '<a href="t.me/pombomsgbotchannel">官方频道</a>和<a href="t.me/kylorensbot">支持</a>上寻求帮助，如果您有任何问题。'
 )
 locale_hi.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 नमस्ते, मेरा नाम %s है! आपके समूह में जोड़ने के लिए धन्यवाद\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ मैं आपको उन निश्चित उपयोगकर्ताओं तक निजी संदेश भेजने में मदद कर सकता हूँ, जो आप चुनते हैं।\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 और अधिक जानने के लिए /start@%s भेजें और अगर आपके पास कोई सवाल हो तो हमारे '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> नमस्ते, मेरा नाम %s है! आपके समूह में जोड़ने के लिए धन्यवाद\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> मैं आपको उन निश्चित उपयोगकर्ताओं तक निजी संदेश भेजने में मदद कर सकता हूँ, जो आप चुनते हैं।\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> और अधिक जानने के लिए /start@%s भेजें और अगर आपके पास कोई सवाल हो तो हमारे '
     '<a href="t.me/pombomsgbotchannel">आधिकारिक चैनल</a> और <a href="t.me/kylorensbot">सहायता</a> पर मदद के लिए पूछने में स्वतंत्र महसूस करें। '
 )
 locale_ar.group_greeting_message = (
-    '<tg-emoji emoji-id="5938028303762853509">👋 مرحبًا ، اسمي %s! شكرًا على إضافتي إلى مجموعتك\n\n'
-    '<tg-emoji emoji-id="4969923081603645985">🗺️ يمكنني مساعدتك في إرسال رسائل خاصة يمكن للمستخدمين الذين تختارهم فقط رؤيتها.\n\n'
-    '<tg-emoji emoji-id="5388787654022148728">🔱 للمزيد من المعلومات ، أرسل /start@%s ولا تتردد في طلب المساعدة على '
+    '<tg-emoji emoji-id="5938028303762853509">👋</tg-emoji> مرحبًا ، اسمي %s! شكرًا على إضافتي إلى مجموعتك\n\n'
+    '<tg-emoji emoji-id="4969923081603645985">🗺️</tg-emoji> يمكنني مساعدتك في إرسال رسائل خاصة يمكن للمستخدمين الذين تختارهم فقط رؤيتها.\n\n'
+    '<tg-emoji emoji-id="5388787654022148728">🔱</tg-emoji> للمزيد من المعلومات ، أرسل /start@%s ولا تتردد في طلب المساعدة على '
     '<a href="t.me/pombomsgbotchannel">القناة الرسمية</a> و <a href="t.me/kylorensbot">الدعم</a> إذا كان لديك أي أسئلة.'
 )
 
@@ -302,73 +302,73 @@ locale_pt.info_message = (
     '@pombomsgbot é um bot inline do Telegram para <b>manter suas mensagens privadas escondidas de olhares indiscretos.</b>\n\n'
     'Envie mensagens privadas para um ou mais usuários no grupo, e tenha conversas privadas sem precisar ir no chat privado.\n\n'
     'Clique nos botões abaixo e entre nosso canal oficial com explicações e atualizações, o se preferir me chame através do suporte.\n\n'
-    '<tg-emoji emoji-id="5258513401784573443">👥<b>Canal de figurinhas:</b> <a href="https://t.me/lbrabo">Clique aqui</a>\n'
+    '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> <b>Canal de figurinhas:</b> <a href="https://t.me/lbrabo">Clique aqui</a>\n'
 )
 locale_en.info_message = (
     '@pombomsgbot is an inline Telegram bot to <b>keep your private messages hidden from prying eyes.</b>\n\n'
     'Send private messages to one or more users in the group, and have private conversations without having to go to private chat.\n\n'
     'Click on the buttons below and enter our official channel with explanations and updates, or if you prefer, call me through support.\n\n'
-    '<tg-emoji emoji-id="5258513401784573443">👥 <b>Sticker channel:</b> <a href="https://t.me/lbrabo">Click here</a>\n'
+    '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> <b>Sticker channel:</b> <a href="https://t.me/lbrabo">Click here</a>\n'
 )
 locale_ru.info_message = (
     '@pombomsgbot — это встроенный бот Telegram, <b>который скрывает ваши личные сообщения от посторонних глаз.</b>\n\n'
     'Отправляйте личные сообщения одному или нескольким пользователям в группе и ведите личные беседы, не переходя в приватный чат.\n\n'
     'Нажмите на кнопки ниже и войдите в наш официальный канал с объяснениями и обновлениями, или, если хотите, позвоните мне через службу поддержки.\n\n'
-    '<tg-emoji emoji-id="5258513401784573443">👥 <b>Канал стикеров:</b> <a href="https://t.me/lbrabo">Нажмите здесь</a>\n'
+    '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> <b>Канал стикеров:</b> <a href="https://t.me/lbrabo">Нажмите здесь</a>\n'
 )
 locale_uk.info_message = (
     '@pombomsgbot — вбудований бот Telegram, який <b>приховує ваші особисті повідомлення від сторонніх очей.</b>\n\n'
     'Надсилайте приватні повідомлення одному чи кільком користувачам у групі та ведіть приватні розмови без необхідності переходити в приватний чат.\n\n'
     'Натисніть кнопки нижче та перейдіть на наш офіційний канал із поясненнями та оновленнями або, якщо хочете, зателефонуйте мені через службу підтримки.\n\n'
-    '<tg-emoji emoji-id="5258513401784573443">👥 <b>Канал наклейок:</b> <a href="https://t.me/lbrabo">Натисніть тут</a>\n'
+    '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> <b>Канал наклейок:</b> <a href="https://t.me/lbrabo">Натисніть тут</a>\n'
 )
 locale_de.info_message = (
     '@pombomsgbot ist ein Inline-Telegram-Bot, um <b>Ihre privaten Nachrichten vor neugierigen Blicken zu verbergen.</b>\n\n'
     'Private Nachrichten an einen oder mehrere Benutzer in der Gruppe senden und private Unterhaltungen führen, ohne in den privaten Chat gehen zu müssen.\n\n'
     'Klicken Sie auf die Schaltflächen unten und betreten Sie unseren offiziellen Kanal mit Erklärungen und Updates, oder rufen Sie mich über den Support an, wenn Sie dies vorziehen.\n\n'
-    '<tg-emoji emoji-id="5258513401784573443">👥 <b>Stickerkanal:</b> <a href="https://t.me/lbrabo">Klicken Sie hier</a>\n'
+    '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> <b>Stickerkanal:</b> <a href="https://t.me/lbrabo">Klicken Sie hier</a>\n'
 )
 locale_it.info_message = (
     '@pombomsgbot è un bot di Telegram integrato <b>per mantenere i tuoi messaggi privati nascosti da occhi indiscreti.</b>\n\n'
     'Invia messaggi privati a uno o più utenti del gruppo e conversa in privato senza dover accedere alla chat privata.\n\n'
     'Fai clic sui pulsanti in basso ed entra nel nostro canale ufficiale con spiegazioni e aggiornamenti, o se preferisci chiamami tramite il supporto.\n\n'
-    '<tg-emoji emoji-id="5258513401784573443">👥 <b>Canale adesivi:</b> <a href="https://t.me/lbrabo">Clicca qui</a>\n'
+    '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> <b>Canale adesivi:</b> <a href="https://t.me/lbrabo">Clicca qui</a>\n'
 )
 locale_fr.info_message = (
     '@pombomsgbot est un bot Telegram en ligne <b>pour garder vos messages privés cachés des regards indiscrets.</b>\n\n'
     'Envoyer des messages privés à un ou plusieurs utilisateurs du groupe et avoir des conversations privées sans avoir à accéder au chat privé.\n\n'
     "Cliquez sur les boutons ci-dessous et accédez à notre chaîne officielle avec des explications et des mises à jour, ou si vous préférez, appelez-moi via l'assistance.\n\n"
-'<tg-emoji emoji-id="5258513401784573443">👥 <b>Chaîne d\'autocollants :</b> <a href="https://t.me/lbrabo">Cliquez ici</a>\n'
+'<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> <b>Chaîne d\'autocollants :</b> <a href="https://t.me/lbrabo">Cliquez ici</a>\n'
 )
 locale_es.info_message = (
     '@pombomsgbot es un bot de Telegram en línea para <b>mantener tus mensajes privados ocultos de miradas indiscretas.</b>\n\n'
     'Envía mensajes privados a uno o más usuarios del grupo y mantén conversaciones privadas sin tener que ir al chat privado.\n\n'
     'Haz clic en los botones de abajo e ingresa a nuestro canal oficial con explicaciones y actualizaciones, o si lo prefieres, llámame a través de soporte.\n\n'
-    '<tg-emoji emoji-id="5258513401784573443">👥 <b>Canal de pegatinas:</b> <a href="https://t.me/lbrabo">Haz clic aquí</a>\n'
+    '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> <b>Canal de pegatinas:</b> <a href="https://t.me/lbrabo">Haz clic aquí</a>\n'
 )
 locale_ja.info_message = (
     '@pombomsgbot は、プライベート <b>メッセージを覗き見されないようにするためのインライン テレグラム ボットです。</b>\n\n'
     'グループ内の 1 人以上のユーザーにプライベート メッセージを送信し、プライベート チャットに行かなくてもプライベートな会話ができます。\n\n'
     '下のボタンをクリックして、説明と最新情報が記載された公式チャンネルにアクセスしてください。または、必要に応じて、サポートを通じて私に電話してください。\n\n'
-    '<tg-emoji emoji-id="5258513401784573443">👥 <b>ステッカー チャンネル:</b> <a href="https://t.me/lbrabo">ここをクリックしてください</a>\n'
+    '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> <b>ステッカー チャンネル:</b> <a href="https://t.me/lbrabo">ここをクリックしてください</a>\n'
 )
 locale_zh.info_message = (
     '@pombomsgbot 是一個內嵌的 Telegram <b>機器人，可以保護您的私人消息不被窺視。</b>\n\n'
     '向群組中的一位或多位用戶發送私人消息，無需進入私人聊天即可進行私人對話。\n\n'
     '單擊下面的按鈕並進入我們的官方頻道，其中包含解釋和更新，或者如果您願意，請通過支持給我打電話。\n\n'
-    '<tg-emoji emoji-id="5258513401784573443">👥 <b>貼紙頻道：</b> <a href="https://t.me/lbrabo">点击这里</a>\n'
+    '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> <b>貼紙頻道：</b> <a href="https://t.me/lbrabo">点击这里</a>\n'
 )
 locale_hi.info_message = (
     '@pombomsgbot आपके निजी संदेशों <b>को ताक-झांक करने वाली नज़रों से छुपाने के लिए एक इनलाइन टेलीग्राम बॉट है।</b>\n\n'
     'समूह में एक या अधिक उपयोगकर्ताओं को निजी संदेश भेजें, और निजी चैट पर जाए बिना निजी वार्तालाप करें।\n\n'
     'नीचे दिए गए बटनों पर क्लिक करें और स्पष्टीकरण और अपडेट के साथ हमारे आधिकारिक चैनल में प्रवेश करें, या यदि आप चाहें, तो मुझे समर्थन के माध्यम से कॉल करें।\n\n'
-    '👥<b> स्टिकर चैनल:</b> <a href="https://t.me/lbrabo">यहाँ क्लिक करें</a>\n'
+    '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> <b> स्टिकर चैनल:</b> <a href="https://t.me/lbrabo">यहाँ क्लिक करें</a>\n'
 )
 locale_ar.info_message = (
     '@pombomsgbot هو روبوت Telegram <b>مضمّن لإخفاء رسائلك الخاصة عن أعين المتطفلين. </b>\n\n'
     'أرسل رسائل خاصة إلى مستخدم واحد أو أكثر في المجموعة ، واستمتع بمحادثات خاصة دون الحاجة إلى الذهاب إلى محادثة خاصة. \n\n'
     'انقر فوق الأزرار أدناه وادخل إلى قناتنا الرسمية مع الشروحات والتحديثات ، أو اتصل بي من خلال الدعم ، إذا كنت تفضل ذلك. \n\n'
-    '<tg-emoji emoji-id="5258513401784573443">👥 <b>قناة الملصق:</b> <a href="https://t.me/lbrabo">انقر هنا</a>\n'
+    '<tg-emoji emoji-id="5258513401784573443">👥</tg-emoji> <b>قناة الملصق:</b> <a href="https://t.me/lbrabo">انقر هنا</a>\n'
 )
 
 # HOW_TO_USE
@@ -387,68 +387,68 @@ locale_ar.how_to_use = 'كيفية استخدام هذا الروبوت؟'
 
 
 # TOO_LONG_DESCRIPTION
-locale_pt.too_long_description = 'Reduza o tamanho da sua mensagem para que não exceda o limite de 200 caracteres.🤏'
-locale_en.too_long_description = "Please shorten the length of your message so that it doesn't exceed the limit of 200 characters.🤏"
-locale_ru.too_long_description = 'Пожалуйста, сократите длину вашего сообщения, чтобы она не превышала лимит в 200 символов.🤏'
-locale_uk.too_long_description = 'Будь ласка, скоротіть довжину Вашого повідомлення, щоб вона не перевищувала ліміт в 200 символів.🤏'
-locale_de.too_long_description = 'Bitte fasse dich etwas kürzer und überschreite das Limit von 200 Zeichen nicht.🤏'
-locale_it.too_long_description = 'Perfavore accorcia la lunghezza del tuo messaggio in modo che non superi i 200 caratteri.🤏'
-locale_fr.too_long_description = "Veuillez raccourcir la longueur de votre message pour qu'il ne dépasse pas la limite de 200 caractères.🤏"
-locale_es.too_long_description = 'Por favor, acorte la longitud de su mensaje para que no exceda el límite de 200 caracteres.🤏'
-locale_ja.too_long_description = 'メッセージの長さが200文字を超えないように、メッセージを短くしてください。🤏'
-locale_zh.too_long_description = '请缩短消息的长度，以使其不超过200个字符的限制。🤏'
+locale_pt.too_long_description = 'Reduza o tamanho da sua mensagem para que não exceda o limite de 200 caracteres. <tg-emoji emoji-id="5447315718825582234">🤏</tg-emoji>
+locale_en.too_long_description = "Please shorten the length of your message so that it doesn't exceed the limit of 200 characters. <tg-emoji emoji-id='5447315718825582234'>🤏</tg-emoji>"
+locale_ru.too_long_description = 'Пожалуйста, сократите длину вашего сообщения, чтобы она не превышала лимит в 200 символов. <tg-emoji emoji-id="5447315718825582234">🤏</tg-emoji>'
+locale_uk.too_long_description = 'Будь ласка, скоротіть довжину Вашого повідомлення, щоб вона не перевищувала ліміт в 200 символів. <tg-emoji emoji-id="5447315718825582234">🤏</tg-emoji>'
+locale_de.too_long_description = 'Bitte fasse dich etwas kürzer und überschreite das Limit von 200 Zeichen nicht. <tg-emoji emoji-id="5447315718825582234">🤏</tg-emoji>'
+locale_it.too_long_description = 'Perfavore accorcia la lunghezza del tuo messaggio in modo che non superi i 200 caratteri. <tg-emoji emoji-id="5447315718825582234">🤏</tg-emoji>'
+locale_fr.too_long_description = "Veuillez raccourcir la longueur de votre message pour qu'il ne dépasse pas la limite de 200 caractères. <tg-emoji emoji-id='5447315718825582234'>🤏</tg-emoji>"
+locale_es.too_long_description = 'Por favor, acorte la longitud de su mensaje para que no exceda el límite de 200 caracteres. <tg-emoji emoji-id="5447315718825582234">🤏</tg-emoji>'
+locale_ja.too_long_description = 'メッセージの長さが200文字を超えないように、メッセージを短くしてください。<tg-emoji emoji-id="5447315718825582234">🤏</tg-emoji>'
+locale_zh.too_long_description = '请缩短消息的长度，以使其不超过200个字符的限制。<tg-emoji emoji-id="5447315718825582234">🤏</tg-emoji>'
 locale_hi.too_long_description = (
-    'कृपया अपना संदेश इतना छोटा करें कि यह 200 अक्षर की सीमा से अधिक न हो।🤏'
+    'कृपया अपना संदेश इतना छोटा करें कि यह 200 अक्षर की सीमा से अधिक न हो। <tg-emoji emoji-id="5447315718825582234">🤏</tg-emoji>'
 )
 locale_ar.too_long_description = (
-    'يرجى تقصير طول رسالتك حتى لا يتجاوز الحد الأقصى للـ 200 حرف.🤏'
+    'يرجى تقصير طول رسالتك حتى لا يتجاوز الحد الأقصى للـ 200 حرف. <tg-emoji emoji-id="5447315718825582234">🤏</tg-emoji>'
 )
 
 
-# NOT_ALLOWED
+# NOT_ALLOWED 
 locale_pt.not_allowed = (
-    'Você não tem permissão para visualizar este conteúdo.🔐'
+    'Você não tem permissão para visualizar este conteúdo.<tg-emoji emoji-id="5197288647275071607">🔐</tg-emoji>'
 )
-locale_en.not_allowed = 'You are not allowed to view this content.🔐'
-locale_ru.not_allowed = 'Вам запрещено просматривать этот контент.🔐'
-locale_uk.not_allowed = 'Вам заборонено переглядати цей контент.🔐'
-locale_de.not_allowed = 'Dir ist nicht gestattet, diesen Inhalt zu lesen.🔐'
-locale_it.not_allowed = 'Non hai il permesso per vedere questo messaggio.🔐'
-locale_fr.not_allowed = "Vous n'êtes pas autorisé à voir ce contenu.🔐"
-locale_es.not_allowed = 'No tienes permitido ver este contenido.🔐'
-locale_ja.not_allowed = 'このコンテンツを表示することは許可されていません。🔐'
-locale_zh.not_allowed = '您无权查看此内容。🔐'
-locale_hi.not_allowed = 'आप इस सामग्री को देखने की अनुमति नहीं हैं।🔐'
-locale_ar.not_allowed = 'لا يُسمح لك بعرض هذا المحتوى.🔐'
+locale_en.not_allowed = 'You are not allowed to view this content.<tg-emoji emoji-id="5197288647275071607">🔐</tg-emoji>'
+locale_ru.not_allowed = 'Вам запрещено просматривать этот контент.<tg-emoji emoji-id="5197288647275071607">🔐</tg-emoji>'
+locale_uk.not_allowed = 'Вам заборонено переглядати цей контент.<tg-emoji emoji-id="5197288647275071607">🔐</tg-emoji>'
+locale_de.not_allowed = 'Dir ist nicht gestattet, diesen Inhalt zu lesen.<tg-emoji emoji-id="5197288647275071607">🔐</tg-emoji>'
+locale_it.not_allowed = 'Non hai il permesso per vedere questo messaggio.<tg-emoji emoji-id="5197288647275071607">🔐</tg-emoji>'
+locale_fr.not_allowed = "Vous n'êtes pas autorisé à voir ce contenu.<tg-emoji emoji-id='5197288647275071607'>🔐</tg-emoji>"
+locale_es.not_allowed = 'No tienes permitido ver este contenido.<tg-emoji emoji-id="5197288647275071607">🔐</tg-emoji>'
+locale_ja.not_allowed = 'このコンテンツを表示することは許可されていません。<tg-emoji emoji-id="5197288647275071607">🔐</tg-emoji>'
+locale_zh.not_allowed = '您无权查看此内容。<tg-emoji emoji-id="5197288647275071607">🔐</tg-emoji>'
+locale_hi.not_allowed = 'आप इस सामग्री को देखने की अनुमति नहीं हैं।<tg-emoji emoji-id="5197288647275071607">🔐</tg-emoji>'
+locale_ar.not_allowed = 'لا يُسمح لك بعرض هذا المحتوى.<tg-emoji emoji-id="5197288647275071607">🔐</tg-emoji>'
 
-# NOT_ACCESSIBLE
-locale_pt.not_accessible = 'Este conteúdo não está mais acessível.🚫'
-locale_en.not_accessible = 'This content is no longer accessible.🚫'
-locale_ru.not_accessible = 'Этот контент больше недоступен.🚫'
-locale_uk.not_accessible = 'Цей контент більше недоступний.🚫'
-locale_de.not_accessible = 'Der Inhalt ist nicht mehr sichtbar.🚫'
-locale_it.not_accessible = 'Questo contenuto non è più accessibile.🚫'
-locale_fr.not_accessible = "Ce contenu n'est plus accessible.🚫"
-locale_es.not_accessible = 'Este contenido ya no está disponible.🚫'
-locale_ja.not_accessible = 'このコンテンツはもうアクセスできません。🚫'
-locale_zh.not_accessible = '此内容不再可访问。🚫'
-locale_hi.not_accessible = 'यह सामग्री अब अधिक उपलब्ध नहीं है।🚫'
-locale_ar.not_accessible = 'لا يمكن الوصول إلى هذا المحتوى بعد الآن.🚫'
+# NOT_ACCESSIBLE 
+locale_pt.not_accessible = 'Este conteúdo não está mais acessível.<tg-emoji emoji-id="6039591820613127611">🚫</tg-emoji>'
+locale_en.not_accessible = 'This content is no longer accessible.<tg-emoji emoji-id="6039591820613127611">🚫</tg-emoji>'
+locale_ru.not_accessible = 'Этот контент больше недоступен.<tg-emoji emoji-id="6039591820613127611">🚫</tg-emoji>'
+locale_uk.not_accessible = 'Цей контент більше недоступний.<tg-emoji emoji-id="6039591820613127611">🚫</tg-emoji>'
+locale_de.not_accessible = 'Der Inhalt ist nicht mehr sichtbar.<tg-emoji emoji-id="6039591820613127611">🚫</tg-emoji>'
+locale_it.not_accessible = 'Questo contenuto non è più accessibile.<tg-emoji emoji-id="6039591820613127611">🚫</tg-emoji>'
+locale_fr.not_accessible = "Ce contenu n'est plus accessible.<tg-emoji emoji-id="6039591820613127611">🚫</tg-emoji>"
+locale_es.not_accessible = 'Este contenido ya no está disponible.<tg-emoji emoji-id="6039591820613127611">🚫</tg-emoji>'
+locale_ja.not_accessible = 'このコンテンツはもうアクセスできません。<tg-emoji emoji-id="6039591820613127611">🚫</tg-emoji>'
+locale_zh.not_accessible = '此内容不再可访问。<tg-emoji emoji-id="6039591820613127611">🚫</tg-emoji>'
+locale_hi.not_accessible = 'यह सामग्री अब अधिक उपलब्ध नहीं है।<tg-emoji emoji-id="6039591820613127611">🚫</tg-emoji>'
+locale_ar.not_accessible = 'لا يمكن الوصول إلى هذا المحتوى بعد الآن.<tg-emoji emoji-id="6039591820613127611">🚫</tg-emoji>'
 
 
-# VIEW
-locale_pt.view = '🔓 Clique para ler'
-locale_en.view = '🔓 View'
-locale_ru.view = '🔓 Открыть'
-locale_uk.view = '🔓 Відкрити'
-locale_de.view = '🔓 Ansehen'
-locale_it.view = '🔓 Vedi'
-locale_fr.view = '🔓 Voir'
-locale_es.view = '🔓 Ver'
-locale_ja.view = '🔓 表示'
-locale_zh.view = '🔓 查看'
-locale_hi.view = '🔓 देखें'
-locale_ar.view = '🔓 عرض'
+# VIEW  <tg-emoji emoji-id="5429405838345265327"><tg-emoji emoji-id="5429405838345265327">🔓</tg-emoji></tg-emoji>
+locale_pt.view = '<tg-emoji emoji-id="5429405838345265327">🔓</tg-emoji> Clique para ler'
+locale_en.view = '<tg-emoji emoji-id="5429405838345265327">🔓</tg-emoji> View'
+locale_ru.view = '<tg-emoji emoji-id="5429405838345265327">🔓</tg-emoji> Открыть'
+locale_uk.view = '<tg-emoji emoji-id="5429405838345265327">🔓</tg-emoji> Відкрити'
+locale_de.view = '<tg-emoji emoji-id="5429405838345265327">🔓</tg-emoji> Ansehen'
+locale_it.view = '<tg-emoji emoji-id="5429405838345265327">🔓</tg-emoji> Vedi'
+locale_fr.view = '<tg-emoji emoji-id="5429405838345265327">🔓</tg-emoji> Voir'
+locale_es.view = '<tg-emoji emoji-id="5429405838345265327">🔓</tg-emoji> Ver'
+locale_ja.view = '<tg-emoji emoji-id="5429405838345265327">🔓</tg-emoji> 表示'
+locale_zh.view = '<tg-emoji emoji-id="5429405838345265327">🔓</tg-emoji> 查看'
+locale_hi.view = '<tg-emoji emoji-id="5429405838345265327">🔓</tg-emoji> देखें'
+locale_ar.view = '<tg-emoji emoji-id="5429405838345265327">🔓</tg-emoji> عرض'
 
 
 # AND_CONNECTOR
