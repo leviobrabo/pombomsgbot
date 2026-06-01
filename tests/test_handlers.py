@@ -108,6 +108,38 @@ class TestCallbackQueryPostNotFound:
         asyncio.run(run())
 
 
+class TestCmdMystats:
+    def test_mystats_replies_in_private(self, pombo_module):
+        from pombo.database.models import User
+        from datetime import datetime
+
+        async def run():
+            msg = make_message(text='/mystats', uid=42)
+            target = MagicMock()
+            target.inline_queries_count = 7
+            target.first_interaction_time = datetime(2025, 1, 1, 12, 0)
+            target.has_dialog = True
+
+            with patch.object(User, 'get_or_create', return_value=target):
+                with patch.object(pombo_module.bot, 'reply_to', new_callable=AsyncMock) as mock_reply:
+                    await pombo_module.cmd_mystats(msg)
+                    mock_reply.assert_called_once()
+                    text_sent = mock_reply.call_args[0][1]
+                    assert '7' in text_sent
+                    assert '2025' in text_sent
+
+        asyncio.run(run())
+
+    def test_mystats_ignored_in_group(self, pombo_module):
+        async def run():
+            msg = make_message(chat_type='group', text='/mystats', uid=42)
+            with patch.object(pombo_module.bot, 'reply_to', new_callable=AsyncMock) as mock_reply:
+                await pombo_module.cmd_mystats(msg)
+                mock_reply.assert_not_called()
+
+        asyncio.run(run())
+
+
 class TestCmdBanAccessControl:
     def test_non_admin_denied(self, pombo_module):
         from pombo.database.models import User

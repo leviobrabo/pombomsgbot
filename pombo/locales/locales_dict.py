@@ -38,6 +38,12 @@ class Locale:
     button_back: str
     button_how_to_use: str
 
+    bot_name: str
+    description: str
+    short_description: str
+    commands_start: str
+    commands_help: str
+
 
 class LocalesDict:
     def __init__(self, locales, default_locale: Locale):

@@ -14,6 +14,8 @@ from datetime import datetime, timezone
 from threading import Thread
 from dotenv import load_dotenv
 
+load_dotenv()
+
 import psutil
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from loguru import logger
@@ -30,7 +32,6 @@ admins = os.environ['ADMINS'].split(',')
 
 logger.add(os.environ['LOG_PATH'])
 rsc = Resources(locales)
-load_dotenv()
 
 inline_query_regex = re.compile(r'^.+([ \n](@\w+|id[0-9]+))+$')
 scope_regex = re.compile(r'([ \n](@\w+|id[0-9]+))+$')
@@ -52,6 +53,7 @@ async def set_my_configs():
                 [
                     types.BotCommand('/start', locales[locale].commands_start),
                     types.BotCommand('/help', locales[locale].commands_help),
+                    types.BotCommand('/mystats', 'Ver minhas estatísticas'),
                 ],
                 language_code=locale,
                 scope=types.BotCommandScopeAllPrivateChats(),
@@ -109,7 +111,7 @@ async def sendStatus():
     uptime = int(time.time() - start_time)
     uptime_formatted = timeFormatter(uptime)
     await bot.edit_message_text(
-        f'#Pombomsgbot #Status\n\nStatus: ON\nPing: `{m_s}ms`\nUptime: `{uptime_formatted}`\nUsers: `{count_users()}`\nPrivate message: `{count_post()}`',
+        f'#Pombomsgbot #Status\n\nStatus: ON\nPing: <code>{m_s}ms</code>\nUptime: <code>{uptime_formatted}</code>\nUsers: <code>{count_users()}</code>\nPrivate message: <code>{count_post()}</code>',
         chat_id=replied.chat.id,
         message_id=replied.message_id,
         message_thread_id=38545,
@@ -132,30 +134,23 @@ scheduler.start()
 def ignore(chat_id, timeout):
     ignored_chat_ids.add(chat_id)
     time.sleep(timeout)
-    ignored_chat_ids.remove(chat_id)
+    ignored_chat_ids.discard(chat_id)
 
 
 def create_post(author: User, content: str, scope: set = ()):
-    try:
-        result = Post.create(
-            author=author,
-            content=content,
-            scope=' '.join(scope).replace('@', ''),
-            creation_time=datetime.now(),
-        )
-        logger.info(
-            '#'
-            + str(result.get_id())
-            + ' foi criado por '
-            + get_formatted_username_or_id(author)
-        )
-        return result
-    except Exception as e:
-        logger.error(
-            'nova postagem não pode ser criada por '
-            + get_formatted_username_or_id(author)
-        )
-        logger.error(e)
+    result = Post.create(
+        author=author,
+        content=content,
+        scope=' '.join(scope).replace('@', ''),
+        creation_time=datetime.now(),
+    )
+    logger.info(
+        '#'
+        + str(result.get_id())
+        + ' foi criado por '
+        + get_formatted_username_or_id(author)
+    )
+    return result
 
 
 def count_users():
@@ -163,14 +158,13 @@ def count_users():
 
 
 def count_per_locates():
-    all_users = User.select()
-    language_code_count = {}
-    for user in all_users:
-        if language_code_count.get(user.language_code):
-            language_code_count[user.language_code] += 1
-        else:
-            language_code_count[user.language_code] = 1
-    return language_code_count
+    from peewee import fn
+    rows = (
+        User.select(User.language_code, fn.COUNT(User.user_id).alias('cnt'))
+        .group_by(User.language_code)
+        .tuples()
+    )
+    return {lang: cnt for lang, cnt in rows}
 
 
 def count_post():
@@ -242,12 +236,13 @@ async def send_message_broadcast(message, receiver):
             continue
         else:
             statistics['actives'] += 1
+        entity_id = user.get_id()
         retry = 3
         for _try in range(retry):
             try:
                 if message.content_type == 'text':
                     await bot.send_message(
-                        user,
+                        entity_id,
                         message.text,
                         reply_markup=keyboard,
                         disable_web_page_preview=True,
@@ -255,72 +250,72 @@ async def send_message_broadcast(message, receiver):
                 elif message.content_type == 'photo':
                     if message.caption:
                         await bot.send_photo(
-                            user,
+                            entity_id,
                             message.photo[-1].file_id,
                             message.caption,
                             reply_markup=keyboard,
                         )
                     else:
                         await bot.send_photo(
-                            user,
+                            entity_id,
                             message.photo[-1].file_id,
                             reply_markup=keyboard,
                         )
                 elif message.content_type == 'audio':
                     if message.caption:
                         await bot.send_audio(
-                            user,
+                            entity_id,
                             message.audio.file_id,
                             caption=message.caption,
                             reply_markup=keyboard,
                         )
                     else:
                         await bot.send_audio(
-                            user, message.audio.file_id, reply_markup=keyboard
+                            entity_id, message.audio.file_id, reply_markup=keyboard
                         )
                 elif message.content_type == 'video':
                     if message.caption:
                         await bot.send_video(
-                            user,
+                            entity_id,
                             message.video.file_id,
                             caption=message.caption,
                             reply_markup=keyboard,
                         )
                     else:
                         await bot.send_video(
-                            user, message.video.file_id, reply_markup=keyboard
+                            entity_id, message.video.file_id, reply_markup=keyboard
                         )
                 elif message.content_type == 'sticker':
                     await bot.send_sticker(
-                        user, message.sticker.file_id, reply_markup=keyboard
+                        entity_id, message.sticker.file_id, reply_markup=keyboard
                     )
                 elif message.content_type == 'voice':
                     await bot.send_voice(
-                        user, message.voice.file_id, reply_markup=keyboard
+                        entity_id, message.voice.file_id, reply_markup=keyboard
                     )
                 elif message.content_type == 'video_note':
                     await bot.send_video_note(
-                        user, message.video_note.file_id, reply_markup=keyboard
+                        entity_id, message.video_note.file_id, reply_markup=keyboard
                     )
                 elif message.content_type == 'animation':
                     if message.caption:
                         await bot.send_animation(
-                            user,
-                            message.document.file_id,
+                            entity_id,
+                            message.animation.file_id,
                             caption=message.caption,
                             reply_markup=keyboard,
                         )
                     else:
                         await bot.send_animation(
-                            user,
-                            message.document.file_id,
+                            entity_id,
+                            message.animation.file_id,
                             reply_markup=keyboard,
                         )
                 statistics['sucess'] += 1
                 break
             except ApiTelegramException as ex:
                 if ex.error_code == 429:
-                    cooldown = ex.result_json['parameters']['retry_after']
+                    cooldown = ex.result_json.get('parameters', {}).get('retry_after', 5)
                     logger.error(
                         f'erro de Flood, tentativa: {_try} , esperar por:',
                         cooldown,
@@ -328,25 +323,18 @@ async def send_message_broadcast(message, receiver):
                     await asyncio.sleep(cooldown + 1)
                     continue
                 else:
-                    target_object.disable_user(user)
+                    target_object.disable_user(entity_id)
                     statistics['fail'] += 1
                     statistics['inactives'] += 1
                     statistics['actives'] -= 1
                     break
             except Exception as erro:
-                logger.error(f'{user} Erro anuncio {erro}')
+                logger.error(f'{entity_id} Erro anuncio {erro}')
                 statistics['fail'] += 1
                 break
         else:
             statistics['fail'] += 1
     return statistics
-
-
-def runThreadSendMsg(args, target):
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    loop.run_until_complete(send_message_broadcast(args, target))
-    loop.close()
 
 
 @bot.inline_handler(
@@ -361,9 +349,7 @@ async def inline_query_hide(inline_query: types.InlineQuery):
         target.inline_queries_count += 1
         target.save()
 
-        if target.has_dialog:
-            target.save()
-        else:
+        if not target.has_dialog:
             await send_new_user_message(inline_query.from_user)
 
         body = scope_regex.sub('', inline_query.query)
@@ -570,7 +556,11 @@ async def callback_query(call: types.CallbackQuery):
                 disable_web_page_preview=True,
             )
         else:
-            (post_id, mode) = str(call.data).split(' ')
+            parts = str(call.data).split(' ', 1)
+            if len(parts) != 2:
+                await bot.answer_callback_query(call.id, show_alert=False)
+                return
+            post_id, mode = parts
             try:
                 post = Post.get_by_id(post_id)
             except Exception as e:
@@ -644,6 +634,24 @@ async def callback_query(call: types.CallbackQuery):
             + call.data
             + '"'
         )
+
+
+@bot.message_handler(commands=['mystats'])
+async def cmd_mystats(message: types.Message):
+    if message.chat.type == 'private':
+        target = User.get_or_create(message.from_user)
+        first_str = (
+            target.first_interaction_time.strftime('%Y-%m-%d %H:%M UTC')
+            if target.first_interaction_time
+            else 'N/A'
+        )
+        text = (
+            '──❑ 「 Suas Estatísticas 」 ❑──\n\n'
+            f' ☆ Consultas inline: <code>{target.inline_queries_count}</code>\n'
+            f' ☆ Primeira interação: <code>{first_str}</code>\n'
+            f' ☆ Chat privado aberto: <code>{"Sim" if target.has_dialog else "Não"}</code>'
+        )
+        await bot.reply_to(message, text, parse_mode='HTML')
 
 
 @bot.message_handler(commands=['stats'])
@@ -728,10 +736,8 @@ async def cmd_sudo(message: types.Message):
                 try:
                     user_to_elevate = int(user_to_elevate)
                     User.set_sudo(user_to_elevate)
-                except Exception as ex:
-                    await bot.reply_to(
-                        message, f'Erro: ID de usuário incorreto!'
-                    )
+                except (ValueError, TypeError) as ex:
+                    await bot.reply_to(message, f'Erro: {ex}')
                     return
                 else:
                     await bot.reply_to(
@@ -742,10 +748,8 @@ async def cmd_sudo(message: types.Message):
                 try:
                     user_to_unelevate = int(user_to_unelevate)
                     User.set_sudo(user_to_unelevate, False)
-                except Exception as ex:
-                    await bot.reply_to(
-                        message, f'Erro: ID de usuário incorreto!'
-                    )
+                except (ValueError, TypeError) as ex:
+                    await bot.reply_to(message, f'Erro: {ex}')
                     return
                 else:
                     await bot.reply_to(
@@ -769,10 +773,8 @@ async def cmd_ban(message: types.Message):
                 try:
                     user_to_ban = int(user_to_ban)
                     User.set_banned(user_to_ban)
-                except Exception as ex:
-                    await bot.reply_to(
-                        message, f'Erro: ID de usuário incorreto!'
-                    )
+                except (ValueError, TypeError) as ex:
+                    await bot.reply_to(message, f'Erro: {ex}')
                     return
                 else:
                     await bot.reply_to(
@@ -783,10 +785,8 @@ async def cmd_ban(message: types.Message):
                 try:
                     user_to_unban = int(user_to_unban)
                     User.set_banned(user_to_unban, False)
-                except Exception as ex:
-                    await bot.reply_to(
-                        message, f'Erro: ID de usuário incorreto!'
-                    )
+                except (ValueError, TypeError) as ex:
+                    await bot.reply_to(message, f'Erro: {ex}')
                     return
                 else:
                     await bot.reply_to(

@@ -30,24 +30,21 @@ from pombo.utils.post_utils import (
 )
 load_dotenv()
 
-DATABASE_TYPE = 'POSTGRESQL'
-
-# PARA USAR SQLITE, DESCOMENTE ABAIXO
-DATABASE_TYPE = 'SQLITE'
-# PARA USAR SQLITE, DESCOMENTE ACIMA
+_db_url = os.environ.get('DATABASE_URL', 'sqlite:///my_app.db')
+DATABASE_TYPE = 'SQLITE' if _db_url.startswith('sqlite') else 'POSTGRESQL'
 
 if DATABASE_TYPE == 'SQLITE':
     from playhouse.sqliteq import SqliteQueueDatabase
 
     db = SqliteQueueDatabase(
-        'my_app.db',
+        _db_url.split(':///', 1)[-1],
         use_gevent=False,
         autostart=True,
         queue_max_size=64,
         results_timeout=5.0,
     )
 else:
-    db = connect(os.environ['DATABASE_URL'])
+    db = connect(_db_url)
 
 
 def update_db():
@@ -90,15 +87,7 @@ class User(BaseModel):
     def get_or_create(user: types.User):
         try:
             result = User.get_by_id(user.id)
-            result.refresh(user)
-        except Exception as e:
-            if str(e).startswith(
-                (
-                    'no such column: t1.has_sudo',
-                    'column t1.has_sudo does not exist',
-                )
-            ):
-                update_db()
+        except User.DoesNotExist:
             result = User.create(
                 user_id=user.id,
                 first_name=user.first_name,
@@ -117,6 +106,8 @@ class User(BaseModel):
                 + get_formatted_username_or_id(user)
                 + ' foi salvo no banco de dados'
             )
+            return result
+        result.refresh(user)
         return result
 
     def refresh(self, user: types.User):
@@ -143,19 +134,28 @@ class User(BaseModel):
 
     @staticmethod
     def set_sudo(user_id, sudo_user=True):
-        result = User.get_by_id(user_id)
+        try:
+            result = User.get_by_id(user_id)
+        except User.DoesNotExist:
+            raise ValueError(f'Usuário {user_id} não encontrado')
         result.has_sudo = sudo_user
         result.save()
 
     @staticmethod
     def set_banned(user_id, ban_user=True):
-        result = User.get_by_id(user_id)
+        try:
+            result = User.get_by_id(user_id)
+        except User.DoesNotExist:
+            raise ValueError(f'Usuário {user_id} não encontrado')
         result.has_banned = ban_user
         result.save()
 
     @staticmethod
     def disable_user(user_id):
-        result = User.get_by_id(user_id)
+        try:
+            result = User.get_by_id(user_id)
+        except User.DoesNotExist:
+            return
         result.has_dialog = False
         result.save()
 
@@ -167,7 +167,8 @@ class Post(BaseModel):
     creation_time = TimestampField()
 
     def get_scope_mentions(self):
-        return str(self.scope).lower().split(' ')
+        s = str(self.scope).strip()
+        return s.lower().split(' ') if s else []
 
     def set_scope_mentions(self, mentions: set):
         self.scope = ' '.join(mentions).replace('@', '')
@@ -193,17 +194,19 @@ class Post(BaseModel):
             else:
                 access_granted = (
                     user.id == self.author.user_id
-                    or str(user.id) in self.scope
+                    or str(user.id) in self.get_scope_mentions()
                 )
         elif mode == PostMode.EXCEPT:
-            if (
+            if user.id == self.author.user_id:
+                access_granted = True
+            elif (
                 user.username
                 and user.username.lower() in self.get_scope_mentions()
             ):
                 access_granted = False
                 self.update_scope_mention(user.username, str(user.id))
             else:
-                access_granted = str(user.id) not in self.scope
+                access_granted = str(user.id) not in self.get_scope_mentions()
         return access_granted
 
 
@@ -220,8 +223,7 @@ class Group(BaseModel):
     def get_or_create(group: types.Chat):
         try:
             result = Group.get_by_id(group.id)
-            result.refresh(group)
-        except Exception as e:
+        except Group.DoesNotExist:
             result = Group.create(
                 group_id=group.id,
                 type=group.type,
@@ -232,10 +234,12 @@ class Group(BaseModel):
                 last_interaction_time=datetime.now(timezone.utc),
             )
             logger.info(
-                'novo usuário '
+                'novo grupo '
                 + get_formatted_username_or_id_chat(group)
                 + ' foi salvo no banco de dados'
             )
+            return result
+        result.refresh(group)
         return result
 
     def refresh(self, group: types.Chat):
