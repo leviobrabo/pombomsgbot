@@ -657,21 +657,57 @@ async def cmd_mystats(message: types.Message):
 @bot.message_handler(commands=['stats'])
 async def cmd_stats(message: types.Message):
     try:
-        user_stats = f' ☆ {count_users()} usuários\n ☆ {count_groups()} Grupos\n ☆ {count_post()} mensagem privadas enviadas'
+        total = count_users()
+        with_dialog = User.count_with_dialog()
+        silent = total - with_dialog
 
-        lang_stats_title = ' ☆ Estatísticas por Idioma:'
-        lang_stats = '\n'.join(
-            [
-                f' ☆ {lang.upper()} -> {count}'
-                for lang, count in count_per_locates().items()
-                if lang is not None
-            ]
+        dau = User.count_active_since(1)
+        wau = User.count_active_since(7)
+        mau = User.count_active_since(30)
+        wau_ratio = f'{wau / total * 100:.1f}%' if total else '0%'
+
+        d1_ret, d1_tot = User.retention_rate(1)
+        d7_ret, d7_tot = User.retention_rate(7)
+        d30_ret, d30_tot = User.retention_rate(30)
+        d1_pct = f'{d1_ret / d1_tot * 100:.0f}%' if d1_tot else 'N/A'
+        d7_pct = f'{d7_ret / d7_tot * 100:.0f}%' if d7_tot else 'N/A'
+        d30_pct = f'{d30_ret / d30_tot * 100:.0f}%' if d30_tot else 'N/A'
+
+        top = User.top_users(5)
+        top_lines = '\n'.join(
+            f'   {i+1}. {u.first_name} — <code>{u.inline_queries_count}</code> msgs'
+            for i, u in enumerate(top)
         )
 
-        await bot.reply_to(
-            message,
-            f'\n──❑ 「 Bot Stats 」 ❑──\n\n{user_stats}\n\n{lang_stats_title}\n\n{lang_stats}',
+        lang_lines = '\n'.join(
+            f'   {lang.upper()} → {cnt}'
+            for lang, cnt in sorted(count_per_locates().items(), key=lambda x: -x[1])
+            if lang is not None
         )
+
+        text = (
+            '──❑ 「 Bot Stats 」 ❑──\n\n'
+            '👥 <b>Usuários</b>\n'
+            f' ☆ Total: <code>{total}</code>\n'
+            f' ☆ Com chat aberto: <code>{with_dialog}</code>\n'
+            f' ☆ Silenciosos: <code>{silent}</code>\n'
+            f' ☆ Grupos: <code>{count_groups()}</code>\n\n'
+            '📈 <b>Atividade</b>\n'
+            f' ☆ DAU (hoje): <code>{dau}</code>\n'
+            f' ☆ WAU (7d): <code>{wau}</code>\n'
+            f' ☆ MAU (30d): <code>{mau}</code>\n'
+            f' ☆ WAU/Total: <code>{wau_ratio}</code>\n\n'
+            '📉 <b>Retenção</b>\n'
+            f' ☆ D1: <code>{d1_pct}</code> ({d1_ret}/{d1_tot})\n'
+            f' ☆ D7: <code>{d7_pct}</code> ({d7_ret}/{d7_tot})\n'
+            f' ☆ D30: <code>{d30_pct}</code> ({d30_ret}/{d30_tot})\n\n'
+            '💬 <b>Engajamento</b>\n'
+            f' ☆ Mensagens privadas: <code>{count_post()}</code>\n\n'
+            f'🏆 <b>Top 5 usuários</b>\n{top_lines}\n\n'
+            f'🌍 <b>Idiomas</b>\n{lang_lines}'
+        )
+
+        await bot.reply_to(message, text, parse_mode='HTML')
     except Exception as e:
         logger.error(e)
         logger.warning(

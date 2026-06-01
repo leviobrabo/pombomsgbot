@@ -140,6 +140,73 @@ class TestCmdMystats:
         asyncio.run(run())
 
 
+class TestCmdStats:
+    def test_stats_renders_all_metric_sections(self, pombo_module):
+        from pombo.database.models import User
+
+        async def run():
+            msg = make_message(text='/stats', uid=1)
+            top_user = MagicMock()
+            top_user.first_name = 'Alice'
+            top_user.inline_queries_count = 99
+
+            with patch.object(User, 'count_active_since', side_effect=[10, 50, 100]):
+                with patch.object(User, 'count_with_dialog', return_value=20):
+                    with patch.object(User, 'retention_rate', side_effect=[(8, 10), (3, 10), (1, 10)]):
+                        with patch.object(User, 'top_users', return_value=[top_user]):
+                            with patch.object(pombo_module, 'count_users', return_value=200):
+                                with patch.object(pombo_module, 'count_groups', return_value=15):
+                                    with patch.object(pombo_module, 'count_post', return_value=500):
+                                        with patch.object(pombo_module, 'count_per_locates', return_value={'pt': 100, 'en': 50}):
+                                            with patch.object(pombo_module.bot, 'reply_to', new_callable=AsyncMock) as mock_reply:
+                                                await pombo_module.cmd_stats(msg)
+                                                mock_reply.assert_called_once()
+                                                text = mock_reply.call_args[0][1]
+                                                for section in ('DAU', 'WAU', 'MAU', 'D1', 'D7', 'D30', 'Top 5', 'Idiomas', 'Silenciosos'):
+                                                    assert section in text, f'Missing section: {section}'
+
+        asyncio.run(run())
+
+    def test_stats_wau_ratio_computed(self, pombo_module):
+        from pombo.database.models import User
+
+        async def run():
+            msg = make_message(text='/stats', uid=1)
+            with patch.object(User, 'count_active_since', side_effect=[10, 20, 30]):
+                with patch.object(User, 'count_with_dialog', return_value=5):
+                    with patch.object(User, 'retention_rate', side_effect=[(0, 0), (0, 0), (0, 0)]):
+                        with patch.object(User, 'top_users', return_value=[]):
+                            with patch.object(pombo_module, 'count_users', return_value=100):
+                                with patch.object(pombo_module, 'count_groups', return_value=0):
+                                    with patch.object(pombo_module, 'count_post', return_value=0):
+                                        with patch.object(pombo_module, 'count_per_locates', return_value={}):
+                                            with patch.object(pombo_module.bot, 'reply_to', new_callable=AsyncMock) as mock_reply:
+                                                await pombo_module.cmd_stats(msg)
+                                                text = mock_reply.call_args[0][1]
+                                                assert '20.0%' in text  # WAU=20, total=100
+
+        asyncio.run(run())
+
+    def test_stats_zero_users_no_crash(self, pombo_module):
+        from pombo.database.models import User
+
+        async def run():
+            msg = make_message(text='/stats', uid=1)
+            with patch.object(User, 'count_active_since', side_effect=[0, 0, 0]):
+                with patch.object(User, 'count_with_dialog', return_value=0):
+                    with patch.object(User, 'retention_rate', side_effect=[(0, 0), (0, 0), (0, 0)]):
+                        with patch.object(User, 'top_users', return_value=[]):
+                            with patch.object(pombo_module, 'count_users', return_value=0):
+                                with patch.object(pombo_module, 'count_groups', return_value=0):
+                                    with patch.object(pombo_module, 'count_post', return_value=0):
+                                        with patch.object(pombo_module, 'count_per_locates', return_value={}):
+                                            with patch.object(pombo_module.bot, 'reply_to', new_callable=AsyncMock) as mock_reply:
+                                                await pombo_module.cmd_stats(msg)
+                                                mock_reply.assert_called_once()
+
+        asyncio.run(run())
+
+
 class TestCmdBanAccessControl:
     def test_non_admin_denied(self, pombo_module):
         from pombo.database.models import User

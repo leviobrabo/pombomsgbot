@@ -6,7 +6,7 @@
 # <https://github.com/leviobrabo/pombomsgbot/blob/main/LICENSE>.
 
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
 
 from loguru import logger
@@ -158,6 +158,46 @@ class User(BaseModel):
             return
         result.has_dialog = False
         result.save()
+
+    @staticmethod
+    def count_active_since(days: int) -> int:
+        cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+        return User.select().where(User.last_interaction_time >= cutoff).count()
+
+    @staticmethod
+    def count_with_dialog() -> int:
+        return User.select().where(User.has_dialog == True).count()
+
+    @staticmethod
+    def retention_rate(days: int) -> tuple:
+        """Returns (retained, cohort_size): users created >= `days` ago who returned after `days` days."""
+        cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+        threshold_seconds = days * 86400
+        total = 0
+        retained = 0
+        for row in User.select(User.first_interaction_time, User.last_interaction_time).where(
+            User.first_interaction_time <= cutoff
+        ):
+            total += 1
+            first = row.first_interaction_time
+            last = row.last_interaction_time
+            if first and last:
+                diff = (
+                    (last - first).total_seconds()
+                    if isinstance(first, datetime)
+                    else float(last) - float(first)
+                )
+                if diff >= threshold_seconds:
+                    retained += 1
+        return retained, total
+
+    @staticmethod
+    def top_users(n: int = 5):
+        return (
+            User.select(User.user_id, User.first_name, User.inline_queries_count)
+            .order_by(User.inline_queries_count.desc())
+            .limit(n)
+        )
 
 
 class Post(BaseModel):
