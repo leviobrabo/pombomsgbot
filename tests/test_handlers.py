@@ -41,8 +41,8 @@ class TestBroadcastFloodControl:
 
     def test_allowed_updates_excludes_chat_boost(self):
         source = open('pombo.py', encoding='utf-8').read()
-        assert 'chat_boost_updated' in source
-        assert 'chat_boost_removed' in source
+        assert "'chat_boost'" in source
+        assert "'removed_chat_boost'" in source
         assert '_broken_update_types' in source
 
 

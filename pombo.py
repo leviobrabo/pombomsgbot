@@ -128,7 +128,6 @@ scheduler.add_job(
     second=5,
     timezone='America/Sao_Paulo',
 )
-scheduler.start()
 
 
 def ignore(chat_id, timeout):
@@ -317,8 +316,7 @@ async def send_message_broadcast(message, receiver):
                 if ex.error_code == 429:
                     cooldown = ex.result_json.get('parameters', {}).get('retry_after', 5)
                     logger.error(
-                        f'erro de Flood, tentativa: {_try} , esperar por:',
-                        cooldown,
+                        f'erro de Flood, tentativa: {_try}, esperar por: {cooldown}'
                     )
                     await asyncio.sleep(cooldown + 1)
                     continue
@@ -985,18 +983,20 @@ async def send_shutdown_message():
     )
 
 
+async def main():
+    await send_initial_message()
+    scheduler.start()
+    _broken_update_types = {'chat_boost', 'removed_chat_boost'}
+    _allowed_updates = [t for t in util.update_types if t not in _broken_update_types]
+    await bot.infinity_polling(
+        allowed_updates=_allowed_updates, skip_pending=True
+    )
+
+
 if __name__ == '__main__':
     try:
         logger.info('Start polling...')
-        asyncio.run(send_initial_message())
-        # asyncio.run(set_my_configs())
-        _broken_update_types = {'chat_boost', 'removed_chat_boost'}
-        _allowed_updates = [t for t in util.update_types if t not in _broken_update_types]
-        asyncio.run(
-            bot.infinity_polling(
-                allowed_updates=_allowed_updates, skip_pending=True
-            )
-        )
+        asyncio.run(main())
     except KeyboardInterrupt:
         logger.info('Bot stopped by the user')
         asyncio.run(send_shutdown_message())
