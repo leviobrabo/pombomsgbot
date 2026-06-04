@@ -11,7 +11,6 @@ import random
 import re
 import time
 from datetime import datetime, timezone
-from threading import Thread
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -130,13 +129,15 @@ scheduler.add_job(
 )
 
 
-def ignore(chat_id, timeout):
+async def ignore(chat_id, timeout):
     ignored_chat_ids.add(chat_id)
-    time.sleep(timeout)
-    ignored_chat_ids.discard(chat_id)
+    try:
+        await asyncio.sleep(timeout)
+    finally:
+        ignored_chat_ids.discard(chat_id)
 
 
-def create_post(author: User, content: str, scope: set = ()):
+def create_post(author: User, content: str, scope=()):
     result = Post.create(
         author=author,
         content=content,
@@ -228,7 +229,7 @@ async def send_message_broadcast(message, receiver):
     else:
         raise Exception('Tipo inválido!')
     keyboard = None
-    statistics = {'actives': 0, 'inactives': 0, 'sucess': 0, 'fail': 0}
+    statistics = {'actives': 0, 'inactives': 0, 'success': 0, 'fail': 0}
     for user in all_users:
         if not user.has_dialog:
             statistics['inactives'] += 1
@@ -310,7 +311,7 @@ async def send_message_broadcast(message, receiver):
                             message.animation.file_id,
                             reply_markup=keyboard,
                         )
-                statistics['sucess'] += 1
+                statistics['success'] += 1
                 break
             except ApiTelegramException as ex:
                 if ex.error_code == 429:
@@ -839,7 +840,7 @@ async def cmd_start(message: types.Message):
     if message.chat.type == 'private':
         if message.chat.id in ignored_chat_ids:
             return
-        Thread(target=ignore, args=(message.chat.id, 1)).start()
+        asyncio.create_task(ignore(message.chat.id, 1))
 
         target = User.get_or_create(message.from_user)
         if target.has_dialog:
@@ -923,7 +924,7 @@ async def cmd_broadcast_reply(message: types.Message):
             f'\n──❑ 「 <b>Broadcast Completed</b> 」 ❑──\n\n'
             f' ☆ Total {target_type}: {result_broadcast["actives"] + result_broadcast["inactives"]}\n'
             f' ☆ Actives: {result_broadcast["actives"]}\n ☆ Inactives: {result_broadcast["inactives"]}\n'
-            f' ☆ Sucess: {result_broadcast["sucess"]}\n ☆ Fail: {result_broadcast["fail"]}'
+            f' ☆ Success: {result_broadcast["success"]}\n ☆ Fail: {result_broadcast["fail"]}'
         )
         await bot.send_message(message.chat.id, msg_result, parse_mode='HTML')
     except Exception as e:
