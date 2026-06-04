@@ -990,7 +990,7 @@ if __name__ == '__main__':
         logger.info('Start polling...')
         asyncio.run(send_initial_message())
         # asyncio.run(set_my_configs())
-        _broken_update_types = {'chat_boost_updated', 'chat_boost_removed'}
+        _broken_update_types = {'chat_boost', 'removed_chat_boost'}
         _allowed_updates = [t for t in util.update_types if t not in _broken_update_types]
         asyncio.run(
             bot.infinity_polling(

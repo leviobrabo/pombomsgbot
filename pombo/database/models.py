@@ -30,7 +30,7 @@ from pombo.utils.post_utils import (
 )
 load_dotenv()
 
-_db_url = os.environ.get('DATABASE_URL', 'sqlite:///my_app.db')
+_db_url = os.environ.get('DATABASE_URL') or 'sqlite:///my_app.db'
 DATABASE_TYPE = 'SQLITE' if _db_url.startswith('sqlite') else 'POSTGRESQL'
 
 if DATABASE_TYPE == 'SQLITE':
