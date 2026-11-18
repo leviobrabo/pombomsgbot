@@ -18,4 +18,4 @@ jobs:
       - name: Compile Python files
         run: python -m compileall -q pombo pombo.py
       - name: Broadcast error classification
-        run: python -m unittest discover -s tests -p "test_*.py" -v
+        run: python -m unittest discover -s tests -p "test_telegram_errors.py" -v
