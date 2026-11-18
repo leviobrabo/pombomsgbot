@@ -217,7 +217,7 @@ async def send_new_user_message(user):
     text += f"<b>User:</b> <a href='tg://user?id={user.id}'>{user.first_name}</a>\n"
     text += f'<b>ID:</b> <code>{user.id}</code>\n'
     text += f"<b>Username:</b> {'@'+user.username if user.username else 'Não informado'}\n"
-    text += f'<b>LANG:</b> {(user.language_code or 'desconhecido').upper()}'
+    text += f"<b>LANG:</b> {(user.language_code or 'desconhecido').upper()}"
     await notify_logs(text, parse_mode='HTML')
 
 
