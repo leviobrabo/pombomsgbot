@@ -26,10 +26,11 @@ from pombo.database.models import Group, Post, PostMode, User
 from pombo.locales.locales import locales
 from pombo.utils.post_utils import get_formatted_username_or_id, timeFormatter
 from pombo.utils.resources import Resources
+from pombo.utils.telegram_errors import is_permanent_recipient_error
 
-admins = os.environ['ADMINS'].split(',')
+admins = [value.strip() for value in os.getenv('ADMINS', '').split(',') if value.strip()]
 
-logger.add(os.environ['LOG_PATH'])
+logger.add(os.getenv('LOG_PATH', 'Logs/session.log'))
 rsc = Resources(locales)
 
 inline_query_regex = re.compile(r'^.+([ \n](@\w+|id[0-9]+))+$')
@@ -39,7 +40,22 @@ ignored_chat_ids = set()
 bot = AsyncTeleBot(os.environ['API_TOKEN'])
 
 scheduler = AsyncIOScheduler()
-channelStatusId = int(os.environ['channelStatusId'])
+channelStatusId = int(os.getenv('channelStatusId') or 0)
+LOG_THREAD_ID = int(os.getenv('LOG_THREAD_ID') or 0)
+
+
+def log_message_options():
+    return {'message_thread_id': LOG_THREAD_ID} if LOG_THREAD_ID else {}
+
+
+async def notify_logs(text, **kwargs):
+    group_id = os.getenv('GROUP_ID', '').strip()
+    if not group_id:
+        return
+    try:
+        await bot.send_message(group_id, text, **log_message_options(), **kwargs)
+    except Exception as ex:
+        logger.warning('Falha ao notificar grupo de logs: {}', ex)
 
 broadcast_text = 'Envie a mensagem que deseja compartilhar com os {}!'
 
@@ -103,8 +119,14 @@ async def set_my_configs():
 
 
 async def sendStatus():
+    if not channelStatusId:
+        return
     start = datetime.now()
-    replied = await bot.send_message(channelStatusId, 'Bot is ON')
+    try:
+        replied = await bot.send_message(channelStatusId, 'Bot is ON')
+    except Exception as ex:
+        logger.warning('Falha ao publicar status: {}', ex)
+        return
     end = datetime.now()
     m_s = (end - start).microseconds // 1000
     uptime = int(time.time() - start_time)
@@ -113,7 +135,6 @@ async def sendStatus():
         f'#Pombomsgbot #Status\n\nStatus: ON\nPing: <code>{m_s}ms</code>\nUptime: <code>{uptime_formatted}</code>\nUsers: <code>{count_users()}</code>\nPrivate message: <code>{count_post()}</code>',
         chat_id=replied.chat.id,
         message_id=replied.message_id,
-        message_thread_id=38545,
         parse_mode='HTML',
     )
 
@@ -192,13 +213,12 @@ def get_banned_list():
 
 
 async def send_new_user_message(user):
-    group_id = os.environ['GROUP_ID']
     text = f'#Pombomsgbot #New_user\n\n'
     text += f"<b>User:</b> <a href='tg://user?id={user.id}'>{user.first_name}</a>\n"
     text += f'<b>ID:</b> <code>{user.id}</code>\n'
     text += f"<b>Username:</b> {'@'+user.username if user.username else 'Não informado'}\n"
-    text += f'<b>LANG:</b> {user.language_code.upper()}'
-    await bot.send_message(chat_id=group_id, text=text, message_thread_id=38545, parse_mode='HTML')
+    text += f'<b>LANG:</b> {(user.language_code or 'desconhecido').upper()}'
+    await notify_logs(text, parse_mode='HTML')
 
 
 async def send_new_group_message(chat):
@@ -206,15 +226,13 @@ async def send_new_group_message(chat):
         chatusername = f'@{chat.username}'
     else:
         chatusername = 'Private Group'
-    await bot.send_message(
-        os.environ['GROUP_ID'],
+    await notify_logs(
         text=f'#Pombomsgbot #New_Group\n\n'
         f'<b>Chat:</b> {chat.title}\n'
         f'<b>ID:</b> <code>{chat.id}</code>\n'
         f'<b>Link:</b> {chatusername}',
         parse_mode='HTML',
         disable_web_page_preview=True,
-        message_thread_id=38545,
     )
 
 
@@ -315,17 +333,19 @@ async def send_message_broadcast(message, receiver):
                 break
             except ApiTelegramException as ex:
                 if ex.error_code == 429:
-                    cooldown = ex.result_json.get('parameters', {}).get('retry_after', 5)
+                    cooldown = min(120, max(1, int((ex.result_json or {}).get('parameters', {}).get('retry_after', 5))))
                     logger.error(
                         f'erro de Flood, tentativa: {_try}, esperar por: {cooldown}'
                     )
                     await asyncio.sleep(cooldown + 1)
                     continue
                 else:
-                    target_object.disable_user(entity_id)
+                    logger.warning('Falha Telegram no envio para {}: {}', entity_id, ex)
+                    if is_permanent_recipient_error(ex.error_code, str(ex)):
+                        target_object.disable_user(entity_id)
+                        statistics['inactives'] += 1
+                        statistics['actives'] -= 1
                     statistics['fail'] += 1
-                    statistics['inactives'] += 1
-                    statistics['actives'] -= 1
                     break
             except Exception as erro:
                 logger.error(f'{entity_id} Erro anuncio {erro}')
@@ -333,6 +353,7 @@ async def send_message_broadcast(message, receiver):
                 break
         else:
             statistics['fail'] += 1
+        await asyncio.sleep(0.05)
     return statistics
 
 
@@ -963,25 +984,12 @@ async def send_group_greeting(message: types.ChatMemberUpdated):
             logger.error(e)
 
 
-GROUP_ID = os.environ['GROUP_ID']
-
-
 async def send_initial_message():
-    await bot.send_message(
-        GROUP_ID,
-        '<b>#Pombomsgbot #Online</b>\n\nBot is now playing ...',
-        parse_mode='HTML',
-        message_thread_id=38545,
-    )
+    await notify_logs('<b>#Pombomsgbot #Online</b>\n\nBot is now playing ...', parse_mode='HTML')
 
 
 async def send_shutdown_message():
-    await bot.send_message(
-        GROUP_ID,
-        '<b>#Pombomsgbot #Offline</b>\n\nBot is now off ...',
-        parse_mode='HTML',
-        message_thread_id=38545,
-    )
+    await notify_logs('<b>#Pombomsgbot #Offline</b>\n\nBot is now off ...', parse_mode='HTML')
 
 
 async def main():
